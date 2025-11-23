@@ -17,7 +17,7 @@ Informally, a code assigns a string of symbols (from $Y$) to every symbol in $X$
 
 Suppose we want to transmit a large piece of text where some symbols appear much more often than others. Using a fixed-length binary code means each symbol takes the same number of bits, even if some symbols are very common. Variable-length codes take advantage of **symbol probabilities**:
 
-$$\text{Average message length} = \sum_{x \in \mathcal{X}} p(x) \cdot L(x)$$
+$$\text{Average message length} = \sum_{x \in X} p(x) \cdot L(x)$$
 
 - $p(x)$ = probability of symbol $x$
 - $L(x)$ = length of codeword for $x$
@@ -60,7 +60,6 @@ After understanding what a code is, the next topics to explore are:
 
 - **Unique decodable codes** – ensuring a code can be interpreted correctly.
 - **Instantaneous and prefix codes** – enabling immediate decoding.
-
 - **Example codes** – unary, Elias, Fibonacci, and Huffman codes.
 
 These codes help to bridge basic definitions to practical coding methods used in MDL.
