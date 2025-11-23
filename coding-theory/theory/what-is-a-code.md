@@ -32,8 +32,8 @@ By assigning shorter codewords to high-probability symbols, we **minimize the ex
 - Code alphabet: `{0, 1}` (bits).
 - Codewords: 7 or 8 bits each.
 - Example:
- - $A \mapsto 01000001$
- - $B \mapsto 01000010$
+  - $A \mapsto 01000001$
+  - $B \mapsto 01000010$
 
 ### 3.2 Morse Code (Variable-Length)
 
@@ -41,9 +41,9 @@ By assigning shorter codewords to high-probability symbols, we **minimize the ex
 - Code alphabet: $\{\cdot, -\}$ (dots and dashes).
 
 - Example:
- - $A \mapsto \cdot\,-$  
- - $B \mapsto - \cdot\,\cdot\,\cdot$  
- - $E \mapsto \cdot$
+  - $A \mapsto \cdot\,-$  
+  - $B \mapsto - \cdot\,\cdot\,\cdot$  
+  - $E \mapsto \cdot$
 
 ## 4. Why Codes Matter
 
