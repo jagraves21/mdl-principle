@@ -41,8 +41,8 @@ By assigning shorter codewords to high-probability symbols, we **minimize the ex
 - Code alphabet: $\{\cdot, -\}$ (dots and dashes).
 
 - Example:
-  - $A \mapsto \cdot\,-$  
-  - $B \mapsto - \cdot\,\cdot\,\cdot$  
+  - $A \mapsto \cdot\ -$  
+  - $B \mapsto - \cdot\ \cdot\ \cdot$  
   - $E \mapsto \cdot$
 
 ## 4. Why Codes Matter
