@@ -29,7 +29,7 @@ By assigning shorter codewords to high-probability symbols, we **minimize the ex
 ### 3.1 ASCII (Fixed-Length)
 
 - Source alphabet: letters A–Z, digits 0–9, punctuation.
-- Code alphabet: `{0, 1}` (bits).
+- Code alphabet: $\{0, 1\}$ (bits).
 - Codewords: 7 or 8 bits each.
 - Example:
   - $A \mapsto 01000001$
