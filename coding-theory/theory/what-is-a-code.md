@@ -39,7 +39,6 @@ By assigning shorter codewords to high-probability symbols, we **minimize the ex
 
 - Source alphabet: letters and digits.
 - Code alphabet: $\{\cdot, -\}$ (dots and dashes).
-
 - Example:
   - $A \mapsto \cdot\ -$  
   - $B \mapsto - \cdot\ \cdot\ \cdot$  
