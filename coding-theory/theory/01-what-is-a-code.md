@@ -13,11 +13,28 @@ A **code** is a mapping $C : X \to Y^{*}$ where
 
 Informally, a code assigns a string of symbols (from $Y$) to every symbol in $X$. If $Y=\{0,1\}$, then $C$ is said to be a binary code.
 
+## 1.1 Encoding Messages via Concatenation
+
+Once we have a code $C: X \to Y^{*}$, we can encode a sequence of symbols by **juxtaposing (concatenating) the codewords** of each symbol in order.
+
+For example, let
+
+$C(a) = 0$
+$C(b) = 01$
+$C(c) = 1$
+
+Then the message $ab$ is encoded as:
+
+$C(a)C(b) = 0\ 01 \rightarrow 001$
+
+Similarly, $bc$ is encoded as:
+$C(b)C(c) = 01\ 1 \rightarrow 011$
+
 ## 2. Fixed-Length vs. Variable-Length Codes
 
 Suppose we want to transmit a large piece of text where some symbols appear much more often than others. Using a fixed-length binary code means each symbol takes the same number of bits, even if some symbols are very common. Variable-length codes take advantage of **symbol probabilities**:
 
-$$\text{Average message length} = \sum_{x \in X} p(x) \cdot L(x)$$
+$$\text{Average message length} = \sum_{x \in X} p(x)L(x)$$
 
 - $p(x)$ = probability of symbol $x$
 - $L(x)$ = length of codeword for $x$
@@ -40,8 +57,8 @@ By assigning shorter codewords to high-probability symbols, we **minimize the ex
 - Source alphabet: letters and digits.
 - Code alphabet: $\{\cdot, -\}$ (dots and dashes).
 - Example:
-  - $A \mapsto \cdot\ -$  
-  - $B \mapsto - \cdot\ \cdot\ \cdot$  
+  - $A \mapsto \cdot\ -$
+  - $B \mapsto - \cdot\ \cdot\ \cdot$
   - $E \mapsto \cdot$
 
 ## 4. Why Codes Matter
@@ -51,7 +68,7 @@ Codes are not just for compression. They also provide a **measure of information
 - In MDL, the length of a codeword corresponds to the **cost or complexity** of representing a symbol or dataset.
 - Shorter codes correspond to more probable or simpler events; longer codes correspond to less probable or more complex events.
 
-This connection between **coding and information** is the foundation for MDL and other information-theoretic methods.
+Codes are also essential in **communication and storage systems**. For example, digital data sent over the internet or stored on a hard drive is often encoded with codes that allow **error detection and correction**. This ensures that messages can be transmitted reliably even in the presence of noise or data corruption.
 
 ## 5. Next Steps
 
@@ -62,3 +79,4 @@ After understanding what a code is, the next topics to explore are:
 - **Example codes** – unary, Elias, Fibonacci, and Huffman codes.
 
 These codes help to bridge basic definitions to practical coding methods used in MDL.
+
