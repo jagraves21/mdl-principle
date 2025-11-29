@@ -75,11 +75,13 @@ Codes are also essential in **communication and storage systems**. For example, 
 
 ## 5. Next Steps
 
-After understanding what a code is, the next topics to explore are:
+After understanding prefix codes and codeword lengths, the next topics to explore are:
 
-- **Unique decodable codes** – ensuring a code can be interpreted correctly.
+- **Uniquely decodable codes** – ensuring a code can be interpreted correctly.
 - **Instantaneous and prefix codes** – enabling immediate decoding.
-- **Example codes** – unary, Elias, Fibonacci, and Huffman codes.
+- **Codeword lengths and the Kraft–McMillan inequalities** – determining feasible codeword lengths and their connection to probabilities.
+- **Universal codes and integer codes** – efficient encoding of integers without prior knowledge of probabilities, including unary, Elias, and Fibonacci codes.
+- **Sardinas–Patterson Algorithm** – a method to test whether a code is uniquely decodable.
 
-These codes help to bridge basic definitions to practical coding methods used in MDL.
+These topics provide a complete theoretical and practical foundation for constructing and analyzing codes, bridging basic definitions to applications in compression and the MDL framework.
 
