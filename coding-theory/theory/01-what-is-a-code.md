@@ -19,17 +19,19 @@ Once we have a code $C: X \to Y^{*}$, we can encode a sequence of symbols by **j
 
 For example, let
 
-- $C(a) = 0$
-- $C(b) = 01$
-- $C(c) = 1$
+$C(a) = 0$
+$C(b) = 01$
+$C(c) = 1$
 
 Then the message $ab$ is encoded as:
 
-$$C(a)C(b) = 0\ 01 \rightarrow 001$$
+$$C(a)C(b) = 0\_01 \rightarrow 001.$$
 
 Similarly, $bc$ is encoded as:
 
-$$C(b)C(c) = 01\ 1 \rightarrow 011$$
+$$C(b)C(c) = 01\_1 \rightarrow 011.$$
+
+*Note: The underscores in the above examples are included **only for readability** to separate codewords; they are not part of the actual code or encoded message.*
 
 ## 2. Fixed-Length vs. Variable-Length Codes
 
