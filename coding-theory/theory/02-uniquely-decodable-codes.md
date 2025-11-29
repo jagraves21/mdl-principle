@@ -32,6 +32,28 @@ This ambiguity motivates the need for uniquely decodable codes, thus ensuring me
 
 With these examples in mind, we can now formally define uniquely decodable codes.
 
+### Example 3: Morse Code
+
+In the Morse code alphabet:
+
+- $A \mapsto \cdot\ -$
+- $E \mapsto \cdot$
+- $F \mapsto \cdot\ \cdot\ -\ \cdot$
+
+Morse code is **not uniquely decodable** without pauses, since the sequence
+
+$$\cdot\ \cdot\ -\ \cdot$$
+
+could be decoded as either
+
+$$E A E$$
+
+or
+
+$$F.$$
+
+To resolve this ambiguity, Morse code uses pauses of varying lengths between dots and dashes (symbols within a letter), between letters, and between words. Including these pauses effectively introduces more than two "symbols" in practice. While the basic signals are binary (dot and dash), the timing of pauses acts like additional symbols, making Morse code behave more like a 5-ary code in terms of transmission.
+
 ## 2. Definition of Uniquely Decodable Codes
 
 Formally, a code $C : X \to Y^{*}$ is **uniquely decodable** if any finite concatenation of its codewords can be decoded in exactly one way.
