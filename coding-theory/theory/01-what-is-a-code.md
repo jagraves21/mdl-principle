@@ -48,7 +48,7 @@ By assigning shorter codewords to high-probability symbols, we **minimize the ex
 
 ### 3.1 ASCII (Fixed-Length)
 
-- Source alphabet: letters A–Z, digits 0–9, punctuation.
+- Source alphabet: letters A&ndash;Z, digits 0&ndash;9, punctuation.
 - Code alphabet: $\{0, 1\}$ (bits).
 - Codewords: 7 or 8 bits each.
 - Example:
@@ -77,11 +77,11 @@ Codes are also essential in **communication and storage systems**. For example, 
 
 After understanding prefix codes and codeword lengths, the next topics to explore are:
 
-- **Uniquely decodable codes** – ensuring a code can be interpreted correctly.
-- **Instantaneous and prefix codes** – enabling immediate decoding.
-- **Codeword lengths and the Kraft–McMillan inequalities** – determining feasible codeword lengths and their connection to probabilities.
-- **Universal codes and integer codes** – efficient encoding of integers without prior knowledge of probabilities, including unary, Elias, and Fibonacci codes.
-- **Sardinas–Patterson Algorithm** – a method to test whether a code is uniquely decodable.
+- **Uniquely decodable codes** &mdash; ensuring a code can be interpreted correctly.
+- **Instantaneous and prefix codes** &mdash; enabling immediate decoding.
+- **Codeword lengths and the Kraft-McMillan inequalities** &mdash; determining feasible codeword lengths and their connection to probabilities.
+- **Universal codes and integer codes** &mdash; efficient encoding of integers without prior knowledge of probabilities, including unary, Elias, and Fibonacci codes.
+- **Sardinas-Patterson Algorithm** &mdash; a method to test whether a code is uniquely decodable.
 
 These topics provide a complete theoretical and practical foundation for constructing and analyzing codes, bridging basic definitions to applications in compression and the MDL framework.
 
