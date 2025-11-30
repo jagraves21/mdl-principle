@@ -131,7 +131,7 @@ growing **slightly faster than $\log_2 n$ but much slower than linear**.
 
 The Fibonacci code is a **prefix-free code** that encodes positive integers using sums of non-consecutive Fibonacci numbers, known as the **Zeckendorf representation**.
 
-**Note:** In this section, we define the Fibonacci sequence as $F_{1} = 1, F_{2} = 2, F_{3} = 3, \dots$, so the Zeckendorf representation of any positive integer uses Fibonacci numbers $F_k$ with $k \ge 2$.
+**Note:** In this section, we define the Fibonacci sequence as $F_{1} = 1, F_{2} = 1, F_{3} = 2, \dots$, so the Zeckendorf representation of any positive integer uses Fibonacci numbers $F_{k}$ with $k \ge 2$.
 
 #### 2.4.1 Zeckendorf Representation
 
