@@ -10,8 +10,10 @@ For a code $C: X \to Y^{*}$ over an alphabet $Y$:
 
 - Each source symbol $x_{i} \in X$ is assigned a **codeword** $C(x_{i})$.
 - Define the **length function**
+
 $$\ell : X \to \mathbb{N}, \qquad \ell(x_{i}) = |C(x_{i})|.$$
-  We write $L_{i} := \ell(x_{i})$ for the length of the codeword associated with symbol $x_{i}$.
+
+We write $L_{i} := \ell(x_{i})$ for the length of the codeword associated with symbol $x_{i}$.
 
 For a sequence (i.e., message)
 
