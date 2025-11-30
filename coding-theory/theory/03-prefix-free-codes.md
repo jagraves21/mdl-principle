@@ -115,5 +115,5 @@ So far, we’ve seen that **prefix-free codes** let us decode messages instantly
 
 This balance between **efficiency** and **decodability** is crucial. To formalize it, we need a way to describe **which sets of codeword lengths are even possible** for a prefix-free code.
 
-The **Kraft-McMillan inequality** provides exactly that: a simple condition that any collection of codeword lengths must satisfy to correspond to a prefix-free code.
+The **Kraft&ndash;McMillan inequality** provides exactly that: a simple condition that any collection of codeword lengths must satisfy to correspond to a prefix-free code.
 
