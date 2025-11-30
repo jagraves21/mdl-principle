@@ -180,7 +180,7 @@ For a positive integer $n$, the Fibonacci code $F(n)$ is constructed as follows:
 
 The Fibonacci code is efficient and its codeword length grows roughly as
 
-$$\ell(n) \sim \log_{\phi} (\sqrt{5}\, n) + 2,$$
+$$\ell(n) \sim \log_{\phi} (\sqrt{5}n) + 2,$$
 
 where $\phi$ is the golden ratio. This growth is **faster than $\log_{2}$ but still much slower than linear**, making it a good universal code for integers.
 
