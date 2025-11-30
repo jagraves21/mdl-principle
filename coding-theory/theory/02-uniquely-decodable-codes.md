@@ -46,11 +46,7 @@ $$\cdot\ \cdot\ -\ \cdot$$
 
 could be decoded as either
 
-$$E A E$$
-
-or
-
-$$F.$$
+$$E\,A\,E \quad \text{or} \quad F.$$
 
 To resolve this ambiguity, Morse code uses pauses of varying lengths between dots and dashes (symbols within a letter), between letters, and between words. Including these pauses effectively introduces more than two "symbols" in practice. While the basic signals are binary (dot and dash), the timing of pauses acts like additional symbols, making Morse code behave more like a 5-ary code in terms of transmission.
 
