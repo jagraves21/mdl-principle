@@ -79,9 +79,9 @@ After understanding prefix codes and codeword lengths, the next topics to explor
 
 - **Uniquely decodable codes** &mdash; ensuring a code can be interpreted correctly.
 - **Instantaneous and prefix codes** &mdash; enabling immediate decoding.
-- **Codeword lengths and the Kraft-McMillan inequalities** &mdash; determining feasible codeword lengths and their connection to probabilities.
+- **Codeword lengths and the Kraft&ndash;McMillan inequalities** &mdash; determining feasible codeword lengths and their connection to probabilities.
 - **Universal codes and integer codes** &mdash; efficient encoding of integers without prior knowledge of probabilities, including unary, Elias, and Fibonacci codes.
-- **Sardinas-Patterson Algorithm** &mdash; a method to test whether a code is uniquely decodable.
+- **Sardinas&ndash;Patterson Algorithm** &mdash; a method to test whether a code is uniquely decodable.
 
 These topics provide a complete theoretical and practical foundation for constructing and analyzing codes, bridging basic definitions to applications in compression and the MDL framework.
 
