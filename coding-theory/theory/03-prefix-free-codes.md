@@ -96,11 +96,13 @@ Thus the two notions describe *the same class of codes*, just from different per
 
 ## 6. Connection to MDL
 
-Prefix-free codes play an important role in Minimum Description Length principle:
+Prefix-free codes are fundamental to the **Minimum Description Length (MDL)** principle:
 
-- They ensure that concatenated codewords can be decoded without ambiguity or delay.
-- They allow total description length to be computed simply as the **sum of individual codeword lengths**.
-- All major coding schemes used in MDL, including unary and Elias codes, are prefix codes.
+-   They ensure that concatenated codewords can be decoded without ambiguity or delay.
+-   They make total description length additive:
+
+    $$L(\text{message})=\sum_{i} L(\text{codeword}_{i}).$$
+-   Standard MDL coding schemes (such as **unary**, **Elias gamma**, and **Elias delta** codes) are all prefix-free codes.
 
 ## 7. Why Codeword Lengths Matter
 
