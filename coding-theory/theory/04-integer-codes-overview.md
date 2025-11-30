@@ -121,7 +121,7 @@ For a positive integer $n$, the Elias delta code $\delta(n)$ is constructed as f
 
 *Note: In the above table, spaces within the codewords separate the gamma-coded length $\gamma(L)$ from the binary remainder $b$ for readability; they are **not** part of the actual codewords.*
 
-The Elias delta code is more efficient than Elias gamma for larger integers, with codeword length  
+The Elias delta code is more efficient than Elias gamma for larger integers, with codeword length
 
 $$\ell(n) = \lfloor \log_2 n \rfloor + 2 \lfloor \log_2 (\lfloor \log_2 n \rfloor + 1) \rfloor + 1,$$
 
@@ -143,24 +143,24 @@ where no two consecutive Fibonacci numbers are used. This representation is **un
 
 A simple way to find it is to use a **greedy algorithm**:
 
-1. Find the **largest Fibonacci number** $F_k$ that is less than or equal to $n$.  
-2. Subtract $F_k$ from $n$.  
-3. Repeat with the remaining number until it becomes zero.  
+1. Find the **largest Fibonacci number** $F_k$ that is less than or equal to $n$.
+2. Subtract $F_k$ from $n$.
+3. Repeat with the remaining number until it becomes zero.
 4. The sum of the selected Fibonacci numbers gives the Zeckendorf representation.
 
-**Example:**  
+**Example:**
 To represent $n = 100$:
-- Largest Fibonacci $\leq$ 100 is $F_{11} = 89$, remainder $11$  
-- Largest Fibonacci $\leq$ 11 is $F_6 = 8$, remainder $3$  
-- Largest Fibonacci $\leq$ 3 is $F_4 = 3$, remainder $0$  
+- Largest Fibonacci $\leq$ 100 is $F_{11} = 89$, remainder $11$
+- Largest Fibonacci $\leq$ 11 is $F_6 = 8$, remainder $3$
+- Largest Fibonacci $\leq$ 3 is $F_4 = 3$, remainder $0$
 - So $100 = F_{11} + F_6 + F_4$
 
 #### 2.4.2 Constructing Fibonacci Codewords
 
 For a positive integer $n$, the Fibonacci code $F(n)$ is constructed as follows:
 
-1. Find the [**Zeckendorf representation**](https://en.wikipedia.org/wiki/Zeckendorf%27s_theorem) of $n$.  
-2. Write a binary string where each position corresponds to a Fibonacci number in the sequence, placing a $1$ if that Fibonacci number is used in the sum and $0$ otherwise.  
+1. Find the [**Zeckendorf representation**](https://en.wikipedia.org/wiki/Zeckendorf%27s_theorem) of $n$.
+2. Write a binary string where each position corresponds to a Fibonacci number in the sequence, placing a $1$ if that Fibonacci number is used in the sum and $0$ otherwise.
 3. Append an extra $1$ at the end to mark the **end of the codeword**.
 
 **Example codewords (1&ndash;10):**
@@ -178,7 +178,7 @@ For a positive integer $n$, the Fibonacci code $F(n)$ is constructed as follows:
 | 9   | $F_{2}+F_{6}$             | 100011 | 6         |
 | 10  | $F_{3}+F_{6}$             | 010011 | 6         |
 
-The Fibonacci code is efficient and its codeword length grows roughly as  
+The Fibonacci code is efficient and its codeword length grows roughly as
 
 $$\ell(n) \sim \log_{\phi} (\sqrt{5}\, n) + 2,$$
 
