@@ -32,7 +32,7 @@
 *.lol
 
 # PDF output (optional, remove if you want to track PDFs)
-*.pdf
+#*.pdf
 
 # latexmk configuration
 latexmkrc
