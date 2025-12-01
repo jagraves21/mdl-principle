@@ -29,7 +29,7 @@ $$\ell(\mathbf{x}) = \sum_{j=1}^{n} \ell(x_{j}) = \sum_{j=1}^{n} |C(x_{j})| = \s
 
 Thus, the description length of any message is simply the sum of the lengths of its individual symbol codewords.
 
-The goal is to design a code $C$ whose induced length function $\ell(x) = |C(x)|$ ensures **unique decoding** while minimizing the **expected message length**. Later, we’ll see how these lengths can be chosen based on symbol probabilities to achieve efficient encoding.
+The goal is to design a code $C$ whose induced length function $\ell(x) = |C(x)|$ ensures **unique decoding** while minimizing the **expected message length**. Later, we'll see how these lengths can be chosen based on symbol probabilities to achieve efficient encoding.
 
 ## 2. Common Integer Codes
 

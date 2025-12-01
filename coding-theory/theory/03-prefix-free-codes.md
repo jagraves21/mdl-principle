@@ -55,7 +55,7 @@ Once the 0 is read, the decoder immediately knows which symbol has been encoded.
 
 A code is said to be **prefix-free** (or simply a **prefix code**) if no codeword is a prefix of any other codeword.
 
-Let’s see how this definition applies to our earlier examples.
+Let's see how this definition applies to our earlier examples.
 
 ### Non-Instantaneous Code:
 
@@ -106,7 +106,7 @@ Prefix-free codes are fundamental to the **Minimum Description Length (MDL)** pr
 
 ## 7. Why Codeword Lengths Matter
 
-So far, we’ve seen that **prefix-free codes** let us decode messages instantly and without ambiguity. But another natural question arises:
+So far, we've seen that **prefix-free codes** let us decode messages instantly and without ambiguity. But another natural question arises:
 
 **How long should each codeword be?**
 
