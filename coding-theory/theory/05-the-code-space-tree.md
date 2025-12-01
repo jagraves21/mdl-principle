@@ -92,7 +92,7 @@ Consider a source alphabet $X = \{a,b,c\}$ and a code alphabet $Y = \{0, 1\}$, a
 
 The following image shows the code space tree corresponding to $C$:
 
-![Code Space Tree](../../assets/images/space-code-tree.png)
+![Code Space Tree](../../assets/images/code-space-tree.png)
 
 The **code space tree** provides a **geometric representation of a code**, showing which parts of the universal code space are “used.” This perspective is especially helpful when reasoning about codes because it makes constraints on codewords more intuitive.
 
