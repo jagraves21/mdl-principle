@@ -25,7 +25,9 @@ For example, let
 
 Then the message $`ab`$ is encoded as:
 
-$$`C(a)C(b) = 0\_01 \rightarrow 001.`$$
+```math
+C(a)C(b) = 0\_01 \rightarrow 001.
+```
 
 Similarly, $bc$ is encoded as:
 
