@@ -8,22 +8,22 @@ A **code** is a mapping $`C : X \to Y^{*}`$ where
 
 - $`X`$ is the **source alphabet** (i.e., the set of symbols you want to represent).
 - $`Y`$ is the **code alphabet** (i.e., the symbols used to form codewords).
-- $`Y^{*}`$` is the set of **all finite-length strings** over $`Y`$.
+- $`Y^{*}`$ is the set of **all finite-length strings** over $`Y`$.
 - $`C(x)`$ is the **codeword** corresponding to source symbol $`x \in X`$.
 
-Informally, a code assigns a string of symbols (from $Y$) to every symbol in $X$. If $Y=\{0,1\}$, then $C$ is said to be a binary code.
+Informally, a code assigns a string of symbols (from $`Y`$) to every symbol in $`X`$. If $`Y=\{0,1\}`$, then $`C`$ is said to be a binary code.
 
 ## 1.1 Encoding Messages via Concatenation
 
-A **messsage** is a finite sequence of source symbols $x_{1} x_{2} \cdots x_{n} \in X^{*}$. Once we have a code $C: X \to Y^{*}$, we can encode a message by **juxtaposing (concatenating) the codewords** of each source symbol in order.
+A **messsage** is a finite sequence of source symbols $`x_{1} x_{2} \cdots x_{n} \in X^{*}`$. Once we have a code $`C: X \to Y^{*}`$, we can encode a message by **juxtaposing (concatenating) the codewords** of each source symbol in order.
 
 For example, let
 
-$C(a) = 0$
-$C(b) = 01$
-$C(c) = 1$
+$`C(a) = 0`$
+$`C(b) = 01`$
+$`C(c) = 1`$
 
-Then the message $ab$ is encoded as:
+Then the message $`ab`$ is encoded as:
 
 $$C(a)C(b) = 0\_01 \rightarrow 001.$$
 
