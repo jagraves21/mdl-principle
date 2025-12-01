@@ -29,9 +29,11 @@ Then the message $`ab`$ is encoded as:
 C(a)C(b) = 0\_01 \rightarrow 001.
 ```
 
-Similarly, $bc$ is encoded as:
+Similarly, $`bc`$ is encoded as:
 
-$$C(b)C(c) = 01\_1 \rightarrow 011.$$
+```math
+C(b)C(c) = 01\_1 \rightarrow 011.
+```
 
 _Note: The underscores in the above examples are included **only for readability** to separate codewords; they are not part of the actual code or encoded message._
 
@@ -39,13 +41,15 @@ _Note: The underscores in the above examples are included **only for readability
 
 Suppose we wish to transmit a long message in which some source symbols occur much more frequently than others. The **average message length** of a code is the expected number of code symbols per source symbol and is given by
 
-$$\bar{L} \;=\; \sum_{x \in X} p(x)\,L(x),$$
+```math
+\bar{L} \;=\; \sum_{x \in X} p(x)\,L(x),
+```
 
-where $p(x)$ is the probability of the source symbol $x$, and $L(x)$ is the number of code symbols in the codeword assigned to $x$.
+where $`p(x)`$ is the probability of the source symbol $`x`$, and $`L(x)`$ is the number of code symbols in the codeword assigned to $`x`$.
 
-A **fixed-length code** assigned the same number of code symbols to every source symbol. And so, if $L(x)=m$ for every source symbol $x$, then $\bar{L}=m$. Fixed-length codes are simple but cannot exploit variation in symbol probabilities.
+A **fixed-length code** assigned the same number of code symbols to every source symbol. And so, if $`L(x)=m`$ for every source symbol $`x`$, then $`\bar{L}=m`$. Fixed-length codes are simple but cannot exploit variation in symbol probabilities.
 
-A **variable-length code** assigns codewords of different lengths to different source symbols. By assigning shorter codewords to more probable symbols (and longer codewords to less probable ones), we can reduce $\bar{L}$ below what any fixed-length code achieves for the same source distribution.
+A **variable-length code** assigns codewords of different lengths to different source symbols. By assigning shorter codewords to more probable symbols (and longer codewords to less probable ones), we can reduce $`\bar{L}`$ below what any fixed-length code achieves for the same source distribution.
 
 By assigning shorter codewords to high-probability symbols, we _minimize the expected message length_. This principle is the foundation of Huffman coding and underpins the Minimum Description Length (MDL) principle, where shorter codes correspond to simpler or more likely explanations of data.
 
@@ -54,20 +58,20 @@ By assigning shorter codewords to high-probability symbols, we _minimize the exp
 ### 3.1 ASCII (Fixed-Length)
 
 - Source alphabet: letters A&ndash;Z, digits 0&ndash;9, punctuation.
-- Code alphabet: $\{0, 1\}$ (bits).
+- Code alphabet: $`\{0, 1\}`$ (bits).
 - Codewords: 7 or 8 bits each.
 - Example:
-  - $A \mapsto 01000001$
-  - $B \mapsto 01000010$
+  - $`A \mapsto 01000001`$
+  - $`B \mapsto 01000010`$
 
 ### 3.2 Morse Code (Variable-Length)
 
 - Source alphabet: letters and digits.
-- Code alphabet: $\{\cdot, -\}$ (dots and dashes).
+- Code alphabet: $`\{\cdot, -\}`$ (dots and dashes).
 - Example:
-  - $A \mapsto \cdot\ -$
-  - $B \mapsto - \cdot\ \cdot\ \cdot$
-  - $E \mapsto \cdot$
+  - $`A \mapsto \cdot\ -`$
+  - $`B \mapsto - \cdot\ \cdot\ \cdot`$
+  - $`E \mapsto \cdot`$
 
 ## 4. Why Codes Matter
 
