@@ -1,8 +1,8 @@
 # The Code Space Tree
 
-Before getting to the Kraft&ndash;McMillan inequalities, let’s ask a simple, but crucial, question: *given a list of codeword lengths, when is it actually possible to build a valid code from them?*
+Before getting to the Kraft&ndash;McMillan inequalities, let's ask a simple, but crucial, question: *given a list of codeword lengths, when is it actually possible to build a valid code from them?*
 
-Not every set of codeword lengths will work; some are impossible to realize as a uniquely decodable (or prefix-free) code. The fundamental limitation comes from the **finite capacity of the code space**, and some combinations just won’t fit. To see why, let’s start with a few examples before introducing the code space tree.
+Not every set of codeword lengths will work; some are impossible to realize as a uniquely decodable (or prefix-free) code. The fundamental limitation comes from the **finite capacity of the code space**, and some combinations just won't fit. To see why, let's start with a few examples before introducing the code space tree.
 
 ### A First Example: An Impossible Assignment
 
@@ -66,7 +66,7 @@ The depth of a node corresponds to the length of the string (codeword) it repres
 Constructing the universal prefix tree is straightforward:
 
 1. Start with the root node representing the empty string $\epsilon$.
-2. For each node at depth $n$, create $|Y|$ children by appending each symbol from the code alphabet $Y$ to the node’s string.
+2. For each node at depth $n$, create $|Y|$ children by appending each symbol from the code alphabet $Y$ to the node's string.
 3. Repeat indefinitely to capture all finite-length codewords.
  
 This tree provides a conceptual framework for visualizing the **entire code space**, showing all possible strings that could be used as codewords. The following image is an example of the universal prefix tree for a binary code alphabet $Y=\{0,1\}$:
@@ -94,9 +94,9 @@ The following image shows the code space tree corresponding to $C$:
 
 ![Code Space Tree](../../assets/images/code-space-tree.png)
 
-The **code space tree** provides a **geometric representation of a code**, showing which parts of the universal code space are “used.” This perspective is especially helpful when reasoning about codes because it makes constraints on codewords more intuitive.
+The **code space tree** provides a **geometric representation of a code**, showing which parts of the universal code space are "used." This perspective is especially helpful when reasoning about codes because it makes constraints on codewords more intuitive.
 
 For example, in a **prefix-free code**, no node representing a codeword can be an ancestor or descendant of another codeword node. If this were the case, the prefix-free property would be violated. Each codeword occupies a distinct portion of the tree, reflecting both **prefix constraints** and **codeword length limitations**.
 
-This view also clarifies the limitations on codeword lengths. Each codeword consumes a fraction of the total tree, and the sum of these fractions cannot exceed one. This observation naturally leads to the **Kraft–McMillan inequality**, which formalizes the **capacity of the code space**.
+This view also clarifies the limitations on codeword lengths. Each codeword consumes a fraction of the total tree, and the sum of these fractions cannot exceed one. This observation naturally leads to the **Kraft&ndash;McMillan inequality**, which formalizes the **capacity of the code space**.
 
