@@ -90,7 +90,7 @@ Next, we explore essential concepts and techniques for constructing and analyzin
 - **Instantaneous and prefix-free codes**  &mdash; enabling immediate decoding.
 - **Codeword lengths and universal integer codes**  &mdash; measuring codeword length and efficient encoding of integers without prior knowledge of probabilities.
 - **Universal prefix and code space trees** &mdash; visualizing which parts of the code space are used and how codewords are organized.
-- ** Kraft&ndash;McMillan inequalities**  &mdash; determining feasible codeword lengths and their connection to probabilities.
+- **Kraft&ndash;McMillan inequalities**  &mdash; determining feasible codeword lengths and their connection to probabilities.
 - **Sardinas&ndash;Patterson Algorithm**  &mdash; a method to test whether a code is uniquely decodable.
 
 These topics provide a complete theoretical and practical foundation for constructing and analyzing codes, bridging basic definitions to applications in compression and the MDL principle.
