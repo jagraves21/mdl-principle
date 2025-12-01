@@ -19,13 +19,13 @@ A **messsage** is a finite sequence of source symbols $`x_{1} x_{2} \cdots x_{n}
 
 For example, let
 
-$`C(a) = 0`$
-$`C(b) = 01`$
-$`C(c) = 1`$
+- $`C(a) = 0`$
+- $`C(b) = 01`$
+- $`C(c) = 1`$
 
 Then the message $`ab`$ is encoded as:
 
-$$C(a)C(b) = 0\_01 \rightarrow 001.$$
+$$`C(a)C(b) = 0\_01 \rightarrow 001.`$$
 
 Similarly, $bc$ is encoded as:
 
