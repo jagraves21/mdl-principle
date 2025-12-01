@@ -4,12 +4,12 @@ In coding theory, a **code** is a systematic way to represent information from o
 
 ## 1. Basic Definition
 
-A **code** is a mapping $C : X \to Y^{*}$ where
+A **code** is a mapping $`C : X \to Y^{*}`$ where
 
-- $X$ is the **source alphabet** (i.e., the set of symbols you want to represent).
-- $Y$ is the **code alphabet** (i.e., the symbols used to form codewords).
-- $Y^{*}$ is the set of **all finite-length strings** over $Y$.
-- $C(x)$ is the **codeword** corresponding to source symbol $x \in X$.
+- $`X`$ is the **source alphabet** (i.e., the set of symbols you want to represent).
+- $`Y`$ is the **code alphabet** (i.e., the symbols used to form codewords).
+- $`Y^{*}`$` is the set of **all finite-length strings** over $`Y`$.
+- $`C(x)`$ is the **codeword** corresponding to source symbol $`x \in X`$.
 
 Informally, a code assigns a string of symbols (from $Y$) to every symbol in $X$. If $Y=\{0,1\}$, then $C$ is said to be a binary code.
 
