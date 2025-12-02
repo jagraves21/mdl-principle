@@ -105,16 +105,16 @@ Prefix-free codes are fundamental to the Minimum Description Length (MDL) princi
 -   They make total description length additive:
 
 ```math
-L(\text{message})=\sum_{i} L(\text{codeword}_{i}).
+L(\text{message}=x_1x_2\dots x_n) = \sum_{i=1}^n L(C(x_i)).
 ```
 
 -   Standard MDL coding schemes (such as unary, Elias gamma, and Elias delta codes) are all prefix-free codes.
 
 ## 7. Why Codeword Lengths Matter
 
-So far, we've seen that **prefix-free codes** let us decode messages instantly and without ambiguity. But another natural question arises:
+So far, we've seen that _prefix-free codes_ let us decode messages instantly and without ambiguity. But another natural question arises:
 
-**How long should each codeword be?**
+_How long should each codeword be?_
 
 - If some codewords are very long, transmitting messages becomes inefficient.
 - If all codewords are short, we might run into conflicts that prevent the code from being prefix-free.
