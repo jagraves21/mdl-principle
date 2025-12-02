@@ -17,7 +17,7 @@ _(This can be shown using the Sardinas&ndash;Patterson Algorithm, which is intro
 
 ### Example 2: A Non-Uniquely Decodable Code
 
-Now consider the code $`C_{2}`$:
+Now consider the binary code $`C_{2}`$ over $X$ given by:
 
 - $`C_{2}(a) = 0`$
 - $`C_{2}(b) = 1`$
