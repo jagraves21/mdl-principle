@@ -41,7 +41,7 @@ The goal is to design a code $`C`$ whose induced length function $`\ell(x) = |C(
 
 ## 2. Common Integer Codes
 
-There are several important integer coding schemes, each with its own strategy for representing integers as sequences of bits. Understanding these codes in terms of their **codeword lengths** helps us see how efficiently they encode small versus large integers. In the following sections, we will introduce some widely used codes and examine how their codeword lengths grow with the integer $`n`$.
+There are several important integer coding schemes, each with its own strategy for representing integers as sequences of bits. Understanding these codes in terms of their codeword lengths helps us see how efficiently they encode small versus large integers. In the following sections, we will introduce some widely used codes and examine how their codeword lengths grow with the integer $`n`$.
 
 ### 2.1 Unary Code
 
@@ -183,32 +183,39 @@ For a positive integer $`n`$, the Fibonacci code $`F(n)`$ is constructed as foll
 **Example codewords (1&ndash;10):**
 
 | $`n`$ | Zeckendorf Representation | $`F(n)`$ | $`\ell(n)`$ |
-|-----|---------------------------|--------|-----------|
-| 1   | $`F_{2}`$                   | 11     | 2         |
-| 2   | $`F_{3}`$                   | 011    | 3         |
-| 3   | $`F_{4}`$                   | 0011   | 4         |
-| 4   | $`F_{2}+F_{4}`$             | 1011   | 4         |
-| 5   | $`F_{5}`$                   | 00011  | 5         |
-| 6   | $`F_{2}+F_{5}`$             | 10011  | 5         |
-| 7   | $`F_{3}+F_{5}`$             | 01011  | 5         |
-| 8   | $`F_{6}`$                   | 000011 | 6         |
-| 9   | $`F_{2}+F_{6}`$             | 100011 | 6         |
-| 10  | $`F_{3}+F_{6}`$             | 010011 | 6         |
+|-------|---------------------------|----------|-------------|
+| 1     | $`F_{2}`$                 | 11       | 2           |
+| 2     | $`F_{3}`$                 | 011      | 3           |
+| 3     | $`F_{4}`$                 | 0011     | 4           |
+| 4     | $`F_{2}+F_{4}`$           | 1011     | 4           |
+| 5     | $`F_{5}`$                 | 00011    | 5           |
+| 6     | $`F_{2}+F_{5}`            | 10011    | 5           |
+| 7     | $`F_{3}+F_{5}`$           | 01011    | 5           |
+| 8     | $`F_{6}`$                 | 000011   | 6           |
+| 9     | $`F_{2}+F_{6}`$           | 100011   | 6           |
+| 10    | $`F_{3}+F_{6}`$           | 010011   | 6           |
 
 The Fibonacci code is efficient and its codeword length grows asymptotically as  
 
-$$\ell(n) \sim \log_{\phi} (\sqrt{5}n) + 2,$$
+```math
+\ell(n) \sim \log_{\phi} (\sqrt{5}n) + 2,
+```
 
-where $\phi$ is the golden ratio. This growth is _faster than $\log_{2}$ but still much slower than linear_, making it a good universal code for integers.
+where $`\phi`$ is the golden ratio. This growth is _faster than $`\log_{2}`$ but still much slower than linear_, making it a good universal code for integers.
 
 ## 3. Universal Codes
 
 A **universal code for positive integers** is a prefix-free code
 
-$$C: \mathbb{Z}^{+} \to \{0,1\}^{*}$$
+```math
+C: \mathbb{Z}^{+} \to \{0,1\}^{*}
+```
 
-whose associated length function $\ell(n) = |C(n)|$ grows **sublinearly** with $n$:
-  $$\ell(n) = o(n) \quad \text{as } n \to \infty.$$
+whose associated length function $`\ell(n) = |C(n)|`$ grows **sublinearly** with $`n`$:
+
+```math
+\ell(n) = o(n) \quad \text{as } n \to \infty.
+```
 
 Universal codes are _distribution-free_ in the sense that their construction does not rely on any assumed probability distribution, making them suitable for applications where no prior is known.
 
