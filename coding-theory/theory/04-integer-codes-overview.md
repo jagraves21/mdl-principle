@@ -221,7 +221,7 @@ Universal codes are _distribution-free_ in the sense that their construction doe
 
 All of the integer codes discussed previously, except for the unary code, are universal codes.
 
-_**Note:** "Universal" in this context specifically refers to codes for positive integers, and not to general sequences or source distributions. In information theory, the term **universal coding** can also refer to codes that efficiently encode sequences from unknown distributions, which is a broader concept._
+_**Note:** "Universal" in this context specifically refers to codes for positive integers, and not general sequences or source distributions. In information theory, the term **universal coding** can also refer to codes that efficiently encode sequences from unknown distributions, which is a broader concept._
 
 ## 4. Other Notable Integer Codes
 
