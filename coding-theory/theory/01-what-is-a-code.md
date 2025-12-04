@@ -43,7 +43,7 @@ _Note: The underscores in the above examples are included **only for readability
 Suppose we wish to transmit a long message in which some source symbols occur much more frequently than others. The **average codeword length** (also called the **expected codeword length**) of a code is the expected number of code symbols per source symbol and is given by  
 
 ```math
-\bar{L} = \sum_{x \in X} p(x)\,L(x)\),
+\bar{L} = \sum_{x \in X} p(x)\,L(x),
 ```
 
 where $`p(x)`$ is the probability of source symbol $`x`$ and $`L(x)`$ is the length of its codeword. For a message consisting of $`N`$ source symbols, the **expected message length** is  
