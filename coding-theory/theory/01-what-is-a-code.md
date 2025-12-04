@@ -1,3 +1,4 @@
+
 # What is a Code?
 
 In coding theory, a **code** is a systematic way to represent information from one set of symbols using another set of symbols. Codes allow us to efficiently store, transmit, and manipulate data.
@@ -39,13 +40,17 @@ _Note: The underscores in the above examples are included **only for readability
 
 ## 2. Fixed-Length vs. Variable-Length Codes
 
-Suppose we wish to transmit a long message in which some source symbols occur much more frequently than others. The **average message length** (or the **expected message length**) of a code is the expected number of code symbols per source symbol and is given by
+Suppose we wish to transmit a long message in which some source symbols occur much more frequently than others. The **average codeword length** (also called the **expected codeword length**) of a code is the expected number of code symbols per source symbol and is given by  
 
 ```math
-\bar{L} \;=\; \sum_{x \in X} p(x)\,L(x),
+\bar{L} = \sum_{x \in X} p(x)\,L(x)\),
 ```
 
-where $`p(x)`$ is the probability of the source symbol $`x`$, and $`L(x)`$ is the number of code symbols in the codeword assigned to $`x`$.
+where $`p(x)`$ is the probability of source symbol $`x`$ and $`L(x)`$ is the length of its codeword. For a message consisting of $`N`$ source symbols, the **expected message length** is  
+
+```math
+\mathbb{E}[L(\text{message})] = N \bar{L}.
+```
 
 A **fixed-length code** assigned the same number of code symbols to every source symbol. And so, if $`L(x)=m`$ for every source symbol $`x`$, then $`\bar{L}=m`$. Fixed-length codes are simple but cannot exploit variation in symbol probabilities.
 
