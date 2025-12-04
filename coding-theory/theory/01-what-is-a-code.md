@@ -35,7 +35,6 @@ Similarly, $`bc`$ is encoded as:
 C(b)C(c) = 01\_1 \rightarrow 011.
 ```
 
-
 _Note: The underscores in the above examples are included **only for readability** to separate codewords; they are not part of the actual code or encoded message._
 
 ## 2. Fixed-Length vs. Variable-Length Codes
