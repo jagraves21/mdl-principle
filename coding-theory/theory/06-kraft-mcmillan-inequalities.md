@@ -56,20 +56,20 @@ Equivalently, using the length function $`\ell(x) = |C(x)|`$,
 
 ### Key Points
 
-- **Necessity:** Any uniquely decodable code, whether prefix-free or not, must satisfy this inequality.  
-- **Difference from Kraft:** Unlike Kraft's Theorem, McMillan's result is **necessary but not sufficient** for uniquely decodable codes. That is to say, satisfying the inequality does not guarantee that a code with those lengths exists; it only constrains what is possible.  
+- **Necessity:** Any uniquely decodable code, whether prefix-free or not, must satisfy this inequality.
+- **Difference from Kraft:** Unlike Kraft's Theorem, McMillan's result is **necessary but not sufficient** for uniquely decodable codes. That is to say, satisfying the inequality does not guarantee that a code with those lengths exists; it only constrains what is possible.
 - **Intuition:** The inequality ensures that the "code space" is not overfilled. Even when codewords can appear as prefixes of others (so long as the code is still uniquely decodable), the total fraction of the universal prefix tree cannot exceed 1.
 
 ### Implications
 
-- Prefix-free codes are a special case of uniquely decodable codes; for them, Kraft's inequality is both necessary and sufficient.  
-- McMillan's inequality extends the length-space constraints to all uniquely decodable codes, providing a fundamental limit on what codeword lengths are possible.  
+- Prefix-free codes are a special case of uniquely decodable codes; for them, Kraft's inequality is both necessary and sufficient.
+- McMillan's inequality extends the length-space constraints to all uniquely decodable codes, providing a fundamental limit on what codeword lengths are possible.
 
 This result forms a bridge to _entropy coding_ and _optimal code design_, since any code aiming to minimize expected length must obey these constraints.
 
 ## 3. From Uniquely Decodable Codes to Prefix-Free Codes
 
-A remarkable property in coding theory is that **any set of codeword lengths achievable by a uniquely decodable code can also be realized by a prefix-free code**. That is, if we have a uniquely decodable code $`C : X \to Y^{*}`$ that is not prefix-free, we can always find a prefix-free code $`C^{\prime} : X \to Y^{*}`$ such that 
+A remarkable property in coding theory is that **any set of codeword lengths achievable by a uniquely decodable code can also be realized by a prefix-free code**. That is, if we have a uniquely decodable code $`C : X \to Y^{*}`$ that is not prefix-free, we can always find a prefix-free code $`C^{\prime} : X \to Y^{*}`$ such that
 
 ```math
 \ell(C(x_{i})) = \ell(C^{\prime}(x_{i})) \quad \text{for all } x_i \in X.

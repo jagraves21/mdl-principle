@@ -1,8 +1,8 @@
 # The Code Space Tree
 
-Before getting to the Kraft&ndash;McMillan inequalities, let’s ask a simple, but crucial, question: _given a list of codeword lengths, when is it actually possible to build a valid code from them?_
+Before getting to the Kraft&ndash;McMillan inequalities, let's ask a simple, but crucial, question: _given a list of codeword lengths, when is it actually possible to build a valid code from them?_
 
-Not every set of codeword lengths will work; some are impossible to realize as a uniquely decodable (or prefix-free) code. The fundamental limitation comes from the _finite capacity of the code space_, and some combinations just won’t fit. To see why, let’s start with a few examples before introducing the code space tree.
+Not every set of codeword lengths will work; some are impossible to realize as a uniquely decodable (or prefix-free) code. The fundamental limitation comes from the _finite capacity of the code space_, and some combinations just won't fit. To see why, let's start with a few examples before introducing the code space tree.
 
 ### A First Example: An Impossible Assignment
 
@@ -12,7 +12,7 @@ Let $`X = \{a,b,c\}`$ be a source alphabet and let $`Y = \{0,1\}`$ be a binary c
 L = \{1, 1, 1\}.
 ```
 
-This would require three distinct codewords, each of length 1.  
+This would require three distinct codewords, each of length 1.
 However, in $`Y^{*}`$ there are only **two** strings of length 1:
 
 ```math
@@ -42,18 +42,18 @@ Therefore, this length assignment cannot yield a prefix-free code. Moreover, thi
 
 ### A Third Example: A Valid Assignment
 
-Let $X = \{a,b,c\}$ be a source alphabet and $Y = \{0,1\}$ the binary code alphabet. Consider constructing a prefix-free code  
+Let $X = \{a,b,c\}$ be a source alphabet and $Y = \{0,1\}$ the binary code alphabet. Consider constructing a prefix-free code
 $C : X \to Y^{*}$ with codeword lengths
 
 $$L = \{1, 2, 2\}.$$
 
 One possible assignment that realizes a prefix-free code with these lengths is:
 
-- $a \mapsto 0$  
-- $b \mapsto 10$  
+- $a \mapsto 0$
+- $b \mapsto 10$
 - $c \mapsto 11$
 
-Here, the length-1 codeword $0$ is assigned to symbol $a$, while the remaining symbols $b$ and $c$ are assigned the length-2 codewords $10$ and $11$, respectively.  
+Here, the length-1 codeword $0$ is assigned to symbol $a$, while the remaining symbols $b$ and $c$ are assigned the length-2 codewords $10$ and $11$, respectively.
 
 No codeword is a prefix of another, and so the code is indeed prefix-free, and therefore also uniquely decodable.
 
@@ -65,23 +65,23 @@ For any given coding scheme, the _code space tree_ is the subset of this univers
 
 ### The Universal Prefix Tree
 
-A **universal prefix tree** is an infinite rooted tree that represents all possible finite codewords over a given code alphabet $Y$. Each node in the tree corresponds to a string in $Y^{*}$, with the root representing the empty string $\epsilon$. Edges connect a node to its children by appending a single symbol from $Y$.  
+A **universal prefix tree** is an infinite rooted tree that represents all possible finite codewords over a given code alphabet $Y$. Each node in the tree corresponds to a string in $Y^{*}$, with the root representing the empty string $\epsilon$. Edges connect a node to its children by appending a single symbol from $Y$.
 
-The depth of a node corresponds to the length of the string (codeword) it represents. Each path from the root to a node corresponds to a unique codeword, and the structure naturally captures prefix relationships.  
+The depth of a node corresponds to the length of the string (codeword) it represents. Each path from the root to a node corresponds to a unique codeword, and the structure naturally captures prefix relationships.
 
 Constructing the universal prefix tree is straightforward:
 
 1. Start with the root node representing the empty string $\epsilon$.
-2. For each node at depth $n$, create $|Y|$ children by appending each symbol from the code alphabet $Y$ to the node’s string.
+2. For each node at depth $n$, create $|Y|$ children by appending each symbol from the code alphabet $Y$ to the node's string.
 3. Repeat indefinitely to capture all finite-length codewords.
- 
+
 This tree provides a conceptual framework for visualizing the _entire code space_, showing all possible strings that could be used as codewords. The following image is an example of the universal prefix tree for a binary code alphabet $Y = \{0,1\}$:
 
 ![Universal Prefix Tree](../../assets/images/universal-prefix-tree.png)
 
 ### The Code Space Tree
 
-A **code space tree** is the portion of the universal prefix tree actually occupied by the codewords of a particular coding scheme. Unlike the universal tree, which is infinite, the code space tree contains only the nodes along paths leading to codewords in the code.  
+A **code space tree** is the portion of the universal prefix tree actually occupied by the codewords of a particular coding scheme. Unlike the universal tree, which is infinite, the code space tree contains only the nodes along paths leading to codewords in the code.
 
 To construct a code space tree:
 
@@ -104,5 +104,5 @@ The code space tree provides a _geometric representation of a code_, showing whi
 
 For example, in a prefix-free code, no node representing a codeword can be an ancestor or descendant of another codeword node. If this were the case, the prefix-free property would be violated. Each codeword occupies a distinct portion of the tree, reflecting both prefix constraints and codeword length limitations.
 
-This view also clarifies the limitations on codeword lengths. Each codeword consumes a fraction of the total tree, and the sum of these fractions cannot exceed one. This observation naturally leads to the Kraft–McMillan inequality, which formalizes the capacity of the code space.
+This view also clarifies the limitations on codeword lengths. Each codeword consumes a fraction of the total tree, and the sum of these fractions cannot exceed one. This observation naturally leads to the Kraft&ndash;McMillan inequality, which formalizes the capacity of the code space.
 

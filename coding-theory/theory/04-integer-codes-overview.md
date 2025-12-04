@@ -37,7 +37,7 @@ The **total encoded length** is obtained by the additive extension of the length
 
 Thus, the description length of any message is simply the sum of the lengths of its individual symbol codewords.
 
-The goal is to design a code $`C`$ whose induced length function $`\ell(x) = |C(x)|`$ ensures _unique decoding_ while minimizing the _expected message length_. Later, we’ll see how these lengths can be chosen based on symbol probabilities to achieve efficient encodings.
+The goal is to design a code $`C`$ whose induced length function $`\ell(x) = |C(x)|`$ ensures _unique decoding_ while minimizing the _expected message length_. Later, we'll see how these lengths can be chosen based on symbol probabilities to achieve efficient encodings.
 
 ## 2. Common Integer Codes
 
@@ -132,7 +132,7 @@ For a positive integer $`n`$, the Elias delta code $`\delta(n)`$ is constructed 
 
 *Note: In the above table, spaces within the codewords separate the gamma-coded length $`\gamma(L)`$ from the binary remainder $`b`$ for readability; they are **not** part of the actual codewords.*
 
-The Elias delta code is more efficient than Elias gamma for larger integers, with codeword length  
+The Elias delta code is more efficient than Elias gamma for larger integers, with codeword length
 
 ```math
 \ell(n) = \lfloor \log_2 n \rfloor + 2 \lfloor \log_2 (\lfloor \log_2 n \rfloor + 1) \rfloor + 1,
@@ -158,26 +158,26 @@ where no two consecutive Fibonacci numbers are used. This representation is _uni
 
 A simple way to find it is to use a **greedy algorithm**:
 
-1. Find the _largest Fibonacci number_ $`F_k`$ that is _less than or equal to_ $`n`$.  
-2. Subtract $`F_k`$ from $`n`$.  
-3. Repeat with the remaining number until it becomes zero.  
+1. Find the _largest Fibonacci number_ $`F_k`$ that is _less than or equal to_ $`n`$.
+2. Subtract $`F_k`$ from $`n`$.
+3. Repeat with the remaining number until it becomes zero.
 4. The sum of the selected Fibonacci numbers gives the Zeckendorf representation.
 
-**Example:**  
+**Example:**
 
 To represent $`n = 100`$:
 
-- Largest Fibonacci $`\leq`$ 100 is $`F_{11} = 89`$, remainder $`11`$  
-- Largest Fibonacci $`\leq`$ 11 is $`F_6 = 8`$, remainder $`3`$  
-- Largest Fibonacci $`\leq`$ 3 is $`F_4 = 3`$, remainder $`0`$  
+- Largest Fibonacci $`\leq`$ 100 is $`F_{11} = 89`$, remainder $`11`$
+- Largest Fibonacci $`\leq`$ 11 is $`F_6 = 8`$, remainder $`3`$
+- Largest Fibonacci $`\leq`$ 3 is $`F_4 = 3`$, remainder $`0`$
 - So $`100 = F_{11} + F_6 + F_4`$
 
 #### 2.4.2 Constructing Fibonacci Codewords
 
 For a positive integer $`n`$, the Fibonacci code $`F(n)`$ is constructed as follows:
 
-1. Find the Zeckendorf representation of $`n`$.  
-2. Write a binary string where each position corresponds to a Fibonacci number in the sequence, placing a $`1`$ if that Fibonacci number is used in the sum and $`0`$ otherwise.  
+1. Find the Zeckendorf representation of $`n`$.
+2. Write a binary string where each position corresponds to a Fibonacci number in the sequence, placing a $`1`$ if that Fibonacci number is used in the sum and $`0`$ otherwise.
 3. Append an extra $`1`$ at the end to mark the end of the codeword.
 
 **Example codewords (1&ndash;10):**
@@ -195,7 +195,7 @@ For a positive integer $`n`$, the Fibonacci code $`F(n)`$ is constructed as foll
 | 9     | $`F_{2}+F_{6}`$           | 100011   | 6           |
 | 10    | $`F_{3}+F_{6}`$           | 010011   | 6           |
 
-The Fibonacci code is efficient and its codeword length grows asymptotically as  
+The Fibonacci code is efficient and its codeword length grows asymptotically as
 
 ```math
 \ell(n) \sim \log_{\phi} (\sqrt{5}n) + 2,
