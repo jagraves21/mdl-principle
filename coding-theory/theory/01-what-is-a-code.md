@@ -39,7 +39,7 @@ _Note: The underscores in the above examples are included **only for readability
 
 ## 2. Fixed-Length vs. Variable-Length Codes
 
-Suppose we wish to transmit a long message in which some source symbols occur much more frequently than others. The **average message length** of a code is the expected number of code symbols per source symbol and is given by
+Suppose we wish to transmit a long message in which some source symbols occur much more frequently than others. The **average message length** (or the **expected message length**)of a code is the expected number of code symbols per source symbol and is given by
 
 ```math
 \bar{L} \;=\; \sum_{x \in X} p(x)\,L(x),
