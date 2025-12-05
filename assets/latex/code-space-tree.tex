@@ -1,76 +1,54 @@
 \documentclass[tikz,border=2mm]{standalone}
 \usetikzlibrary{trees,positioning}
 
+\usepackage{mytikzstyles}
+
 \begin{document}
 
-\begin{tikzpicture}[
-	level distance=1.2cm,
-	level 1/.style={sibling distance=4cm},
-	level 2/.style={sibling distance=2cm},
-	level 3/.style={sibling distance=1cm},
-	level 4/.style={
-		sibling distance=0.5cm,
-		every node/.style={
-			minimum size=0mm,
-			inner sep=0pt,
-			yshift=5mm
-		}
-	},
-	every node/.style={circle,draw,minimum size=6mm,inner sep=0pt},
-	included/.style={
-		opacity=1,
-		line width=1pt,
-		edge from parent/.append style={draw,opacity=1,line width=1pt}
-	},
-	excluded/.style={
-		opacity=0.2,
-		line width=0.4pt,
-		edge from parent/.append style={draw,opacity=0.2,line width=0.4pt}
-	}
-]
+\begin{tikzpicture}[mytree,line width=0.75pt]
 
-\node [included] {$\varepsilon$}
-	child [included] { node [included] {0}  
-		child [excluded] { node [excluded] {00} 
-			child [excluded] { node [excluded] {000} 
-				child [excluded] { node [excluded] {$\vdots$} }
-				child [excluded] { node [excluded] {$\vdots$} }
+\node {$\varepsilon$}
+	child { node {0}  
+		child [excluded] { node {00} 
+			child { node {000} 
+				child { node {$\vdots$} }
+				child { node {$\vdots$} }
 			}
-			child [excluded] { node [excluded] {001} 
-				child [excluded] { node [excluded] {$\vdots$} }
-				child [excluded] { node [excluded] {$\vdots$} }
+			child { node {001} 
+				child { node {$\vdots$} }
+				child { node {$\vdots$} }
 			}
 		}
-		child [excluded] { node [excluded] {01} 
-			child [excluded] { node [excluded] {010} 
-				child [excluded] { node [excluded] {$\vdots$} }
-				child [excluded] { node [excluded] {$\vdots$} }
+		child [excluded] { node {01} 
+			child { node {010} 
+				child { node {$\vdots$} }
+				child { node {$\vdots$} }
 			}
-			child [excluded] { node [excluded] {011} 
-				child [excluded] { node [excluded] {$\vdots$} }
-				child [excluded] { node [excluded] {$\vdots$} }
+			child { node {011} 
+				child { node {$\vdots$} }
+				child { node {$\vdots$} }
 			}
 		}
 	}
-	child [included] { node [included]  {1} 
-		child [included] { node [included] {10}  
-			child [excluded] { node [excluded] {100} 
-				child [excluded] { node [excluded] {$\vdots$} }
-				child [excluded] { node [excluded] {$\vdots$} }
+	child { node  {1} 
+		child { node {10}  
+			child [excluded] { node {100} 
+				child { node {$\vdots$} }
+				child { node {$\vdots$} }
 			}
-			child [excluded] { node [excluded] {101} 
-				child [excluded] { node [excluded] {$\vdots$} }
-				child [excluded] { node [excluded] {$\vdots$} }
+			child [excluded] { node {101} 
+				child { node {$\vdots$} }
+				child { node {$\vdots$} }
 			}
 		}
-		child [included] { node [included]  {11} 
-			child [included] { node [included] {110} 
-				child [excluded] { node [excluded] {$\vdots$} }
-				child [excluded] { node [excluded] {$\vdots$} }
+		child { node  {11} 
+			child { node {110} 
+				child [excluded] { node {$\vdots$} }
+				child [excluded] { node {$\vdots$} }
 			}
-			child [excluded] { node [excluded] {111} 
-				child [excluded] { node [excluded] {$\vdots$} }
-				child [excluded] { node [excluded] {$\vdots$} }
+			child [excluded] { node {111} 
+				child { node {$\vdots$} }
+				child { node {$\vdots$} }
 			}
 		}
 	};

@@ -5,10 +5,10 @@
 
 \begin{document}
 
-\begin{tikzpicture}[mytree]
+\begin{tikzpicture}[mytree,line width=0.75pt]
 
 \node {$\varepsilon$}
-	child { node {0}  
+	child [chosen] { node [codeword] {0}  
 		child { node {00} 
 			child { node {000} 
 				child { node {$\vdots$} }
@@ -31,7 +31,7 @@
 		}
 	}
 	child { node  {1} 
-		child { node {10}  
+		child [chosen] { node [codeword] {10}  
 			child { node {100} 
 				child { node {$\vdots$} }
 				child { node {$\vdots$} }
@@ -42,11 +42,11 @@
 			}
 		}
 		child { node  {11} 
-			child { node {110} 
+			child [chosen] { node [codeword] {110} 
 				child { node {$\vdots$} }
 				child { node {$\vdots$} }
 			}
-			child { node {111} 
+			child [chosen] { node [codeword] {111} 
 				child { node {$\vdots$} }
 				child { node {$\vdots$} }
 			}
