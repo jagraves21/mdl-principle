@@ -8,45 +8,45 @@
 \begin{tikzpicture}[mytree,line width=0.75pt]
 
 \node {$\varepsilon$}
-	child [chosen] { node [codeword] {0}  
-		child { node {00} 
-			child { node {000} 
+	child { node {0}
+		child [chosen] { node [codeword, label={[shift={(0em,-0.25em)}]$a$}] {00}
+			child { node {000}
 				child { node {$\vdots$} }
 				child { node {$\vdots$} }
 			}
-			child { node {001} 
+			child { node {001}
 				child { node {$\vdots$} }
 				child { node {$\vdots$} }
 			}
 		}
-		child { node {01} 
-			child { node {010} 
+		child { node {01}
+			child { node {010}
 				child { node {$\vdots$} }
 				child { node {$\vdots$} }
 			}
-			child { node {011} 
+			child { node {011}
 				child { node {$\vdots$} }
 				child { node {$\vdots$} }
 			}
 		}
 	}
-	child { node  {1} 
-		child { node {10}  
-			child { node {100} 
+	child { node {1}
+		child { node {10}
+			child { node {100}
 				child { node {$\vdots$} }
 				child { node {$\vdots$} }
 			}
-			child { node {101} 
+			child { node {101}
 				child { node {$\vdots$} }
 				child { node {$\vdots$} }
 			}
 		}
-		child { node  {11} 
-			child { node {110} 
+		child { node {11}
+			child { node {110}
 				child { node {$\vdots$} }
 				child { node {$\vdots$} }
 			}
-			child { node {111} 
+			child { node {111}
 				child { node {$\vdots$} }
 				child { node {$\vdots$} }
 			}
@@ -56,3 +56,4 @@
 \end{tikzpicture}
 
 \end{document}
+

@@ -50,7 +50,7 @@ install: $(PNGS) $(GIF)
 
 # Clean LaTeX auxiliary files
 clean-latex:
-	rm -f *.aux *.log *.toc *.out *.lof *.lot *.fls *.fdb_latexmk
+	rm -f *.aux *.log *.toc *.out *.lof *.lot *.fls *.fdb_latexmk *.synctex.gz
 
 # Clean GIF frames
 clean-frames:
