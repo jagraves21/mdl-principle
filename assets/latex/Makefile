@@ -1,16 +1,16 @@
 # TEX Sources
-TEX_SOURCES := universal-prefix-tree.tex code-space-tree.tex $(wildcard canonical-code-construction-*.tex)
+TEX_SOURCES := universal-prefix-tree.tex code-space-tree.tex shannon-fano-code.tex $(wildcard lexicographical-code-construction-*.tex)
 PDFS := $(TEX_SOURCES:.tex=.pdf)
 
 # PDF Sources
-PNG_SOURCES := universal-prefix-tree.tex code-space-tree.tex
+PNG_SOURCES := universal-prefix-tree.tex code-space-tree.tex shannon-fano-code.tex
 PNGS := $(PNG_SOURCES:.tex=.png)
 
 # GIF sources
-GIF_SOURCES := $(wildcard canonical-code-construction-*.tex)
+GIF_SOURCES := $(wildcard lexicographical-code-construction-*.tex)
 GIF_PDFS := $(GIF_SOURCES:.tex=.pdf)
 GIF_FRAMES := $(patsubst %.pdf,frame_%.png,$(GIF_PDFS))
-GIF := canonical-code-construction.gif
+GIF := lexicographical-code-construction.gif
 
 # Default target
 all: $(PNGS) $(GIF)
@@ -23,7 +23,7 @@ $(PDFS): %.pdf: %.tex
 $(PNGS): %.png: %.pdf
 	magick -density 300 $< -colorspace Gray -resize 75% -quality 100 $@
 
-# Build GIF frames from canonical-code-construction PDFs (high-res grayscale)
+# Build GIF frames from lexicographical-code-construction PDFs (high-res grayscale)
 $(GIF_FRAMES): frame_%.png : %.pdf
 	magick -density 300 $< -colorspace Gray -resize 75% -quality 100 $@
 
