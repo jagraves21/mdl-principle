@@ -1,0 +1,40 @@
+\ProvidesPackage{mytikzstyles}[2025/12/04 Custom TikZ styles for trees]
+\RequirePackage{tikz}
+\usetikzlibrary{trees,positioning}
+
+\tikzset{
+	mytree/.style={
+		level distance=1.2cm,
+		level 1/.style={sibling distance=4cm},
+		level 2/.style={sibling distance=2cm},
+		level 3/.style={sibling distance=1cm},
+		level 4/.style={
+			sibling distance=0.5cm,
+			every node/.style={
+				minimum size=0mm,
+				inner sep=0pt,
+				yshift=5mm
+			}
+		},
+		every node/.style={
+			circle,
+			draw,
+			minimum size=6mm,
+			inner sep=0pt
+		},
+		edge from parent/.style={
+			draw
+		}
+	},
+	excluded/.style={
+		draw=gray!50,
+		text=gray!50,
+		every child/.style={excluded}
+	},
+	codeword/.style={
+		line width=1.5pt
+	},
+	chosen/.style={
+		every child/.style={excluded}
+	}
+}

@@ -1,9 +1,9 @@
 # TEX Sources
-TEX_SOURCES := universal-prefix-tree.tex code-space-tree.tex shannon-fano-code.tex $(wildcard lexicographical-code-construction-*.tex)
+TEX_SOURCES := universal-prefix-tree.tex code-space-tree.tex shannon-fano-code.tex huffman-code.tex $(wildcard lexicographical-code-construction-*.tex)
 PDFS := $(TEX_SOURCES:.tex=.pdf)
 
 # PDF Sources
-PNG_SOURCES := universal-prefix-tree.tex code-space-tree.tex shannon-fano-code.tex
+PNG_SOURCES := universal-prefix-tree.tex code-space-tree.tex shannon-fano-code.tex huffman-code.tex
 PNGS := $(PNG_SOURCES:.tex=.png)
 
 # GIF sources
