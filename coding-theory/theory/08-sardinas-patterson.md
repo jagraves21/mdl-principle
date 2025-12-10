@@ -116,12 +116,12 @@ Next, we compute $`S_{2}`$ from $`S_{1}`$ using the recursive definition:
 
 ```math
 \begin{aligned}
-S_{k+1} =& \{ w \mid x \in D,\ s \in S_{k},\ s=xw \} \\
-&\cup \{ w \mid x \in D,\ s \in S_{k},\ x=sw \}.
+S_{2} =& \{ w \mid x \in D,\ s \in S_{1},\ s=xw \} \\
+&\cup \{ w \mid x \in D,\ s \in S_{1},\ x=sw \}.
 \end{aligned}
 ```
 
-Considering cases where a codeword is a prefix of a string in $`S_1`$:
+Considering cases where a codeword is a prefix of a string in $`S_{1}`$:
 
 - For $`s = 1`$ and $`s = 11`$, no codeword in $`D`$ is a prefix of either string, since all codewords in $`D`$ begin with $`0`$. Thus, no suffixes arise from this case.
 
@@ -142,10 +142,7 @@ D = \{ 01, 10, 101, 11101 \}.
 Following the Sardinas&ndash;Patterson Algorithm, we compute the successive sets of suffixes:
 
 ```math
-\begin{aligned}
-S_{1} &= \{ 1 \} \\
-S_{2} &= \{ 0, 01, 1101 \} \\
-S_{3} &= \{ \varepsilon, 1 \}
+S_{1} &= \{ 1 \}, \quad S_{2} &= \{ 0, 01, 1101 \}, \quad \text{and} \quad S_{3} &= \{ \varepsilon, 1 \}.
 \end{aligned}
 ```
 
