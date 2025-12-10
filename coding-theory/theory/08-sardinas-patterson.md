@@ -143,7 +143,6 @@ Following the Sardinas&ndash;Patterson Algorithm, we compute the successive sets
 
 ```math
 S_{1} &= \{ 1 \}, \quad S_{2} &= \{ 0, 01, 1101 \}, \quad \text{and} \quad S_{3} &= \{ \varepsilon, 1 \}.
-\end{aligned}
 ```
 
 Since $`S_{3}`$ contains $`\varepsilon`$, the code $`C`$ is not uniquely decodable, according to the Sardinas&ndash;Patterson algorithm.
