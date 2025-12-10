@@ -68,7 +68,7 @@ Let $`C: X \to Y^{*}`$ be a _finite_ code, where $`X`$ is the source alphabet an
 Define $`S_{1}`$ as the set of all _non-empty suffixes_ obtained when one codeword has another codeword as a prefix:
 
 ```math
-S_{1} = \{ w \in Y^{*} \mid \exists x_{i}, x_{j} \in \mathrm{Im}(C),\; x_{i} = x_{j} w,\; w \neq \varepsilon \}.
+S_{1} = \{ w \in Y^{*} \mid x_{i}, x_{j} \in \mathrm{Im}(C),\; x_{i} = x_{j} w,\; w \neq \varepsilon \}.
 ```
 
 Here, $`\mathrm{Im}(C)`$ denotes the image of $`C`$ (i.e., the codebook of $`C`$.
