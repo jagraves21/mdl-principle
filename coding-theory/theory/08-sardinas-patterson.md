@@ -1,4 +1,4 @@
-# Sardinas&ndash;Patterson Algorithm
+# The Sardinas&ndash;Patterson Algorithm
 
 Prefix-free codes are always uniquely decodable and relatively easy to verify. However, many codes are uniquely decodable even if they are not prefix-free. Determining unique decodability is important because, in communication systems and data compression, we need to ensure that encoded messages can always be decoded unambiguously. The _Sardinas&ndash;Patterson algorithm_ provides a systematic way to check whether a code is uniquely decodable, even when it is not prefix-free, helping us design efficient and reliable coding schemes.
 
