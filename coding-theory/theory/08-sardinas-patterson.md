@@ -95,7 +95,9 @@ If a concatenation of codewords can be interpreted in multiple ways, a suffix wi
    * If $`S_{k+1}`$ contains $`\varepsilon`$, the code is **not uniquely decodable**.
    * If $`S_{k+1} = S_{k}`$, the code is **uniquely decodable**.
 
-## 4. Example 1
+## 4. Examples
+
+### Example 1
 
 Let $`C`$ be a code with codebook
 
@@ -129,7 +131,7 @@ Considering cases where a string in $`S_{1}`$ is a prefix of a codeword:
 
 Thus, $`S_{2} = \varnothing`$ and $`S_{3} = S_{2}`$. Since $`\varepsilon \notin S_{k}`$ and the sets have stabilized ($`S_{2} = S_{3}`$), the code $`C`$ is uniquely decodable according to the Sardinas&ndash;Patterson algorithm.
 
-## 5. Example 2
+### Example 2
 
 Let $`C`$ be a code with codebook
 
