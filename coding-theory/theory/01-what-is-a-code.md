@@ -1,9 +1,13 @@
-
 # What is a Code?
 
-In coding theory, a **code** is a systematic way to represent information from one set of symbols using another set of symbols. Codes allow us to efficiently store, transmit, and manipulate data.
+In coding theory, a _code_ is a systematic way to represent information from one set of symbols using another set of symbols. Codes allow us to efficiently store, transmit, and manipulate data.
 
-## 1. Basic Definition
+## 1. Basic Definitions
+
+An **alphabet** is a set of symbols, finite or infinite, used to form strings. A **string** (or **word**) is a finite sequence of symbols from an alphabet. The **empty string**, denoted $`\varepsilon`$, is the unique string of length $`0`$. For an alphabet $`Y`$:  
+
+- $`Y^{*}`$ is the set of all finite strings over $`Y`$, including the empty string $`\varepsilon`$.  
+- $`Y^{+}`$ is the set of all non-empty finite strings over $`Y`$; equivalently, $`Y^{+} = Y^{*} \setminus \{\varepsilon\}`$.  
 
 A **code** is a mapping $`C : X \to Y^{*}`$ where
 
@@ -12,7 +16,13 @@ A **code** is a mapping $`C : X \to Y^{*}`$ where
 - $`Y^{*}`$ is the set of **all finite-length strings** over $`Y`$.
 - $`C(x)`$ is the **codeword** corresponding to source symbol $`x \in X`$.
 
-Informally, a code assigns a string of symbols (from $`Y`$) to every symbol in $`X`$. If $`Y=\{0,1\}`$, then $`C`$ is said to be a binary code.
+The **image** of $C$, denoted $\operatorname{Im}(C)$, is called the **codebook** of $C$. That is,
+
+```math
+\operatorname{Im}(C) = \{ C(x) \mid x \in X \}.
+```
+
+Informally, a code assigns a string of symbols (from $`Y`$) to every symbol in $`X`$. If $`Y=\{0,1\}`$, then $`C`$ is said to be a **binary code**.
 
 ## 1.1 Encoding Messages via Concatenation
 
