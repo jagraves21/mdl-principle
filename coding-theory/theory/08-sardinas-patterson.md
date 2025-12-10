@@ -68,10 +68,10 @@ Let $`C: X \to Y^{*}`$ be a _finite_ code, where $`X`$ is the source alphabet an
 Define $`S_{1}`$ as the set of all _non-empty suffixes_ obtained when one codeword has another codeword as a prefix:
 
 ```math
-S_{1} = \{ w \in Y^{*} \mid \exists x_{i}, x_{j} \in \operatorname{Im}(C),\; x_{i} = x_{j} w,\; w \neq \varepsilon \}.
+S_{1} = \{ w \in Y^{*} \mid \exists x_{i}, x_{j} \in \mathrm{Im}(C),\; x_{i} = x_{j} w,\; w \neq \varepsilon \}.
 ```
 
-Here, $`\operatorname{Im}(C)`$ denotes the image of $`C`$ (i.e., the codebook of $`C`$.
+Here, $`\mathrm{Im}(C)`$ denotes the image of $`C`$ (i.e., the codebook of $`C`$.
 
 Intuitively, $`S_{1}`$ contains the _first potential ambiguities_ in the code. If a codeword $`x_{i}`$ begins with another codeword $`x_{j}`$, then the remainder of $`x_{i}`$ after removing $`x_{j}`$ is included in $`S_{1}`$. These are exactly the strings that need to be tracked to check for unique decodability.
 
@@ -79,8 +79,8 @@ For $`k \ge 1`$, define a sequence of sets $`\{ S_{k} \}_{k \ge 1}`$ recursively
 
 ```math
 \begin{aligned}
-S_{k+1} =& \{ w \mid x \in \operatorname{Im}(C),\; s \in S_{k},\; s = x w \} \\
-& \cup \{ w \mid x \in \operatorname{Im}(C),\; s \in S_{k},\; x = s w \}.
+S_{k+1} =& \{ w \mid x \in \mathrm{Im}(C),\; s \in S_{k},\; s = x w \} \\
+& \cup \{ w \mid x \in \mathrm{Im}(C),\; s \in S_{k},\; x = s w \}.
 \end{aligned}
 ```
 
