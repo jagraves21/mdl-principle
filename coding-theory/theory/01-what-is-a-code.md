@@ -4,10 +4,10 @@ In coding theory, a _code_ is a systematic way to represent information from one
 
 ## 1. Basic Definitions
 
-An **alphabet** is a set of symbols, finite or infinite, used to form strings. A **string** (or **word**) is a finite sequence of symbols from an alphabet. The **empty string**, denoted $`\varepsilon`$, is the unique string of length $`0`$. For an alphabet $`Y`$:  
+An **alphabet** is a set of symbols, finite or infinite, used to form strings. A **string** (or **word**) is a finite sequence of symbols from an alphabet. The **empty string**, denoted $`\varepsilon`$, is the unique string of length $`0`$. For an alphabet $`Y`$:
 
-- $`Y^{*}`$ is the set of all finite strings over $`Y`$, including the empty string $`\varepsilon`$.  
-- $`Y^{+}`$ is the set of all non-empty finite strings over $`Y`$; equivalently, $`Y^{+} = Y^{*} \setminus \{\varepsilon\}`$.  
+- $`Y^{*}`$ is the set of all finite strings over $`Y`$, including the empty string $`\varepsilon`$.
+- $`Y^{+}`$ is the set of all non-empty finite strings over $`Y`$; equivalently, $`Y^{+} = Y^{*} \setminus \{\varepsilon\}`$.
 
 A **code** is a mapping $`C : X \to Y^{*}`$ where
 
