@@ -142,7 +142,7 @@ D = \{ 01, 10, 101, 11101 \}.
 Following the Sardinas&ndash;Patterson Algorithm, we compute the successive sets of suffixes:
 
 ```math
-S_{1} &= \{ 1 \}, \quad S_{2} &= \{ 0, 01, 1101 \}, \quad \text{and} \quad S_{3} &= \{ \varepsilon, 1 \}.
+S_{1} = \{ 1 \}, \quad S_{2} = \{ 0, 01, 1101 \}, \quad \text{and} \quad S_{3} = \{ \varepsilon, 1 \}.
 ```
 
 Since $`S_{3}`$ contains $`\varepsilon`$, the code $`C`$ is not uniquely decodable, according to the Sardinas&ndash;Patterson algorithm.
