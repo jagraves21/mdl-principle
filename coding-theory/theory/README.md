@@ -1,6 +1,6 @@
 # Coding Theory Concepts
 
-This directory provides a brief introduction to coding theory concepts needed to understand and apply the **Minimum Description Length (MDL) principle**.
+This directory provides a brief introduction to coding theory concepts needed to understand and apply the Minimum Description Length (MDL) principle.
 
 The goal is not to present a full information‐theoretic treatment of coding but to supply the minimal background needed to understand and build descriptions used as part of the MDL principle.
 
