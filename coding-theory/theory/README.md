@@ -1,4 +1,4 @@
-# Coding Theory Background for the MDL Principle
+# Coding Theory Concepts
 
 This directory provides a brief introduction to coding theory concepts needed to understand and apply the **Minimum Description Length (MDL) principle**.
 
