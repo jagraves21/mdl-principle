@@ -60,7 +60,7 @@ A code is said to be **prefix-free** (or simply a **prefix code**) if no codewor
 
 Let's see how this definition applies to our earlier examples.
 
-### Non-Instantaneous Code:
+### 4.1. A Non-Instantaneous Code
 
 Recall the code $`C_{1}`$ from before where
 
@@ -69,7 +69,7 @@ Recall the code $`C_{1}`$ from before where
 
 Here $`0`$ is a prefix of $`01`$, and so this code is not prefix-free.
 
-### Prefix-Free Code:
+### 4.2. A Prefix-Free Code
 
 Now recall the code $`C_{2}`$ from above with
 

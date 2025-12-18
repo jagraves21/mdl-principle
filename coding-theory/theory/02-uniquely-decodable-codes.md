@@ -1,10 +1,10 @@
 # Uniquely Decodable Codes
 
-Before diving into formal definitions, let's look at two example codes:
+Before diving into formal definitions, let's look at a few example codes:
 
 ## 1. Motivation
 
-### Example 1: A Uniquely Decodable Code
+### 1.1. A Uniquely Decodable Code
 
 Let $`X = \{a, b, c\}`$ be a source alphabet, and consider the binary code $`C_{1}`$:
 
@@ -15,7 +15,7 @@ Let $`X = \{a, b, c\}`$ be a source alphabet, and consider the binary code $`C_{
 This code is _uniquely decodable_. That is, any concatenation of codewords from $`C_{1}`$ can be decoded in exactly one way.
 _(This can be shown using the Sardinas&ndash;Patterson Algorithm, which is introduced later.)_
 
-### Example 2: A Non-Uniquely Decodable Code
+### 1.2. A Non-Uniquely Decodable Code
 
 Now consider the binary code $`C_{2}`$ over $X$ given by:
 
@@ -30,7 +30,7 @@ This code is _not uniquely decodable_. For example, the sequence $`01`$ could co
 
 This ambiguity motivates the need for uniquely decodable codes, thus ensuring messages can be decoded unambiguously.
 
-### Example 3: Morse Code
+### 1.3. Morse Code
 
 In the Morse code alphabet:
 

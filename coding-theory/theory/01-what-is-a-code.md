@@ -24,7 +24,7 @@ The **image** of $C$, denoted $\operatorname{Im}(C)$, is called the **codebook**
 
 Informally, a code assigns a string of symbols (from $`Y`$) to every symbol in $`X`$. If $`Y=\{0,1\}`$, then $`C`$ is said to be a **binary code**.
 
-## 1.1 Encoding Messages via Concatenation
+### 1.1 Encoding Messages via Concatenation
 
 A **messsage** is a finite sequence of source symbols $`x_{1} x_{2} \cdots x_{n} \in X^{*}`$. Once we have a code $`C: X \to Y^{*}`$, we can encode a message by **juxtaposing (concatenating) the codewords** of each source symbol in order.
 
