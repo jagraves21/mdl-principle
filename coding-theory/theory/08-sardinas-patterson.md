@@ -61,7 +61,7 @@ At this point, $`w`$ and $`w^{\prime}`$ have the same prefix, namely $`10101`$. 
 
 It is worth noting that the Sardinas-Patterson algorithm applies only to finite codes. Determining if an infinite code (i.e., one with an infinite source alphabet) is unique decodability is, in general, not computable, and other techniques are required.
 
-### Preliminaries
+### 3.1 Preliminaries
 
 Let $`C: X \to Y^{*}`$ be a _finite_ code, where $`X`$ is the source alphabet and $`Y`$ is the code alphabet.
 
@@ -88,7 +88,7 @@ Intuitively, $`S_{k+1}`$ contains all non-empty suffixes that could create ambig
 
 If a concatenation of codewords can be interpreted in multiple ways, a suffix will eventually reduce to the empty string, indicating ambiguity.
 
-### The Algorithm
+### 3.2. The Algorithm
 
 1. Compute $`S_{1}`$.
 2. Iteratively compute $`S_{k+1}`$:
@@ -97,7 +97,9 @@ If a concatenation of codewords can be interpreted in multiple ways, a suffix wi
 
 ## 4. Examples
 
-### Example 1
+We now apply the Sardinas&ndash;Patterson algorithm two a few concrete examples.
+
+### 4.1. An Example of a Uniquely Decodable Code
 
 Let $`C`$ be a code with codebook
 
@@ -131,7 +133,7 @@ Considering cases where a string in $`S_{1}`$ is a prefix of a codeword:
 
 Thus, $`S_{2} = \varnothing`$ and $`S_{3} = S_{2}`$. Since $`\varepsilon \notin S_{k}`$ and the sets have stabilized ($`S_{2} = S_{3}`$), the code $`C`$ is uniquely decodable according to the Sardinas&ndash;Patterson algorithm.
 
-### Example 2
+### 4.2. An Example of a Non-Uniquely Decodable Code
 
 Let $`C`$ be a code with codebook
 
