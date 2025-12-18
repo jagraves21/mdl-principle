@@ -16,10 +16,10 @@ A **code** is a mapping $`C : X \to Y^{*}`$ where
 - $`Y^{*}`$ is the set of **all finite-length strings** over $`Y`$.
 - $`C(x)`$ is the **codeword** corresponding to source symbol $`x \in X`$.
 
-The **image** of $C$, denoted $\operatorname{Im}(C)$, is called the **codebook** of $C$. That is,
+The **image** of $C$, denoted $\text{Im}(C)$, is called the **codebook** of $C$. That is,
 
 ```math
-\operatorname{Im}(C) = \{ C(x) \mid x \in X \}.
+\text{Im}(C) = \{ C(x) \mid x \in X \}.
 ```
 
 Informally, a code assigns a string of symbols (from $`Y`$) to every symbol in $`X`$. If $`Y=\{0,1\}`$, then $`C`$ is said to be a **binary code**.
