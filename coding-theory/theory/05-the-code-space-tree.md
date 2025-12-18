@@ -2,9 +2,11 @@
 
 Before getting to the Kraft&ndash;McMillan inequalities, let's ask a simple, but crucial, question: _given a list of codeword lengths, when is it actually possible to build a valid code from them?_
 
+## 1. Motivation
+
 Not every set of codeword lengths will work; some are impossible to realize as a uniquely decodable (or prefix-free) code. The fundamental limitation comes from the _finite capacity of the code space_, and some combinations just won't fit. To see why, let's start with a few examples before introducing the code space tree.
 
-### A First Example: An Impossible Assignment
+### 1.1. A First Example: An Impossible Assignment
 
 Let $`X = \{a,b,c\}`$ be a source alphabet and let $`Y = \{0,1\}`$ be a binary code alphabet. Consider the problem of constructing a uniquely decodable code $`C : X \to Y^{*}`$ with codeword lengths
 
@@ -23,7 +25,7 @@ Therefore, no matter what decoding strategy is used, it is impossible to produce
 
 In general, in a $`D`$-ary code, there are at most $`D^{L}`$ distinct strings of length $`L`$. And so, any attempt to assign more than $`L`$ codewrods of length $`L`$ is impossible.
 
-### A Second Example: Interference Between Lengths
+### 1.2. A Second Example: Interference Between Lengths
 
 Now let $`X = \{a,b,c,d\}`$ be the source alphabet, and keep $`Y = \{0,1\}`$ as the binary code alphabet. Consider now the problem of constructing a prefix-free code $`C : X \to Y^{*}`$ with codeword lengths
 
@@ -40,7 +42,7 @@ However, a problem arise because of the prefix-free requirement. If we choose th
 
 Therefore, this length assignment cannot yield a prefix-free code. Moreover, this length assignment cannot yield any uniquely decodable code, because the short codeword blocks too many of the available sequences for the longer codewords.
 
-### A Third Example: A Valid Assignment
+### 1.3. A Third Example: A Valid Assignment
 
 Let $X = \{a,b,c\}$ be a source alphabet and $Y = \{0,1\}$ the binary code alphabet. Consider constructing a prefix-free code
 $C : X \to Y^{*}$ with codeword lengths
@@ -57,13 +59,13 @@ Here, the length-1 codeword $0$ is assigned to symbol $a$, while the remaining s
 
 No codeword is a prefix of another, and so the code is indeed prefix-free, and therefore also uniquely decodable.
 
-## The Code Space Tree
+## 2. The Code Space Tree
 
 Let $X$ be a source alphabet and $Y$ a code alphabet. To develop an intuitive understanding of how codewords are organized and how their lengths are constrained, both in prefix-free and universal coding, it is helpful to construct a _universal prefix tree_ over $Y$. This infinite rooted tree provides a geometric representation of the set of all finite codewords, where each node corresponds to a unique string in $Y^{*}$, and the depth of a node corresponds to codeword length.
 
 For any given coding scheme, the _code space tree_ is the subset of this universal tree consisting of the nodes associated with the actual codewords.
 
-### The Universal Prefix Tree
+### 2.1. The Universal Prefix Tree
 
 A **universal prefix tree** is an infinite rooted tree that represents all possible finite codewords over a given code alphabet $Y$. Each node in the tree corresponds to a string in $Y^{*}$, with the root representing the empty string $\epsilon$. Edges connect a node to its children by appending a single symbol from $Y$.
 
@@ -79,7 +81,7 @@ This tree provides a conceptual framework for visualizing the _entire code space
 
 ![Universal Prefix Tree](../../assets/images/universal-prefix-tree.png)
 
-### The Code Space Tree
+### 2.2. The Code Space Tree
 
 A **code space tree** is the portion of the universal prefix tree actually occupied by the codewords of a particular coding scheme. Unlike the universal tree, which is infinite, the code space tree contains only the nodes along paths leading to codewords in the code.
 
