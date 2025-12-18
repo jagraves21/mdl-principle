@@ -227,13 +227,13 @@ _**Note:** "Universal" in this context specifically refers to codes for positive
 
 Several additional integer coding schemes are widely used in practice, often tailored for specific applications.
 
-[**Elias Omega Coding:**](https://en.wikipedia.org/wiki/Elias_omega_coding) A **universal, prefix-free** recursive code that improves on Elias gamma and delta codes for larger integers.
+[**Elias Omega Coding**](https://en.wikipedia.org/wiki/Elias_omega_coding)**:** A **universal, prefix-free** recursive code that improves on Elias gamma and delta codes for larger integers.
 
-[**Exp-Golomb Coding:**](https://en.wikipedia.org/wiki/Exponential-Golomb_coding) A family of **universal, prefix-free** codes used in video compression standards (e.g., H.264/AVC). It generalizes Elias gamma and delta codes and is efficient for encoding both small and large integers.
+[**Exp-Golomb Coding**](https://en.wikipedia.org/wiki/Exponential-Golomb_coding)**:** A family of **universal, prefix-free** codes used in video compression standards (e.g., H.264/AVC). It generalizes Elias gamma and delta codes and is efficient for encoding both small and large integers.
 
-[**Levenshtein Coding:**](https://en.wikipedia.org/wiki/Levenshtein_coding) The **first universal code** for integers. Provides compact, **prefix-free** representations for all positive integers with simple encoding and decoding algorithms.
+[**Levenshtein Coding**](https://en.wikipedia.org/wiki/Levenshtein_coding)**:** The **first universal code** for integers. Provides compact, **prefix-free** representations for all positive integers with simple encoding and decoding algorithms.
 
-[**Golomb Coding:**](https://en.wikipedia.org/wiki/Golomb_coding) A generalization of Rice coding for geometrically distributed integers with arbitrary parameters. Golomb codes are **prefix-free** but **not universal**, and reduce to Rice codes for certain parameter choices.
+[**Golomb Coding**](https://en.wikipedia.org/wiki/Golomb_coding)**:** A generalization of Rice coding for geometrically distributed integers with arbitrary parameters. Golomb codes are **prefix-free** but **not universal**, and reduce to Rice codes for certain parameter choices.
 
-[**Rice Coding:**](https://en.wikipedia.org/wiki/Golomb_coding#Rice_coding) A special case of Golomb coding optimized for geometrically distributed integers. **Prefix-free** but **not universal**, commonly used in lossless audio compression (e.g., FLAC) and efficient for data skewed toward smaller integers.
+[**Rice Coding**](https://en.wikipedia.org/wiki/Golomb_coding#Rice_coding)**:** A special case of Golomb coding optimized for geometrically distributed integers. **Prefix-free** but **not universal**, commonly used in lossless audio compression (e.g., FLAC) and efficient for data skewed toward smaller integers.
 
