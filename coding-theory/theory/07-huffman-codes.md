@@ -8,11 +8,11 @@ Suppose we have a set of symbols $`X = \{x_{1}, x_{2}, \dots, x_{n}\}`$ with kno
 
 Several algorithms have been developed to solve this problem. In the following sections, we present three well-known approaches: a general greedy algorithm, Shannon&ndash;Fano coding, and the optimal Huffman coding algorithm. While all three of these methods build codewords according to symbol probabilities, they differ in efficiency, simplicity, and optimality.
 
-## 2. Lexicographical Prefix-Free Code Construction
+## 1. Lexicographical Prefix-Free Code Construction
 
 A constructive, greedy approach for building prefix-free codes can be derived from Kraft's theorem. In this method, we first determine the desired codeword lengths (typically based on symbol probabilities). Once we have a given set of codeword lengths that satisfy Kraft's inequality, we can assign codewords iteratively in the universal prefix tree, always choosing the leftmost available node at the appropriate depth. By marking the assigned node and its entire subtree as used, this method ensures that no codeword is a prefix of another, producing a valid prefix-free code with the specified lengths. This method is sometimes referred to as the **lexicographical prefix-free code construction from a given set of codeword lengths** (or simply as the **lexicographical prefix-free code assignment**).
 
-### Algorithm
+### 1.1. Algorithm
 
 1. Sort the desired codeword lengths in non-decreasing order.
 2. Initialize the full universal prefix tree.
@@ -30,7 +30,7 @@ L_{i} = \lceil -log_{D}\,p(x_{i}) \rceil.
 
 This choice ensures that the codeword lengths satisfy the Kraft inequality, guaranteeing the existence of a prefix-free code. Moreover, these lengths are near-optimal in the sense that the expected codeword length is at most one code symbol longer than the minimum achievable by any prefix-free code.
 
-### Example
+### 1.2. Example
 
 Suppose we want to construct a binary, prefix-free code for the source symbols $`X = \{a, b, c, d, e\}`$ with probabilities
 
@@ -88,14 +88,14 @@ The expected codeword length for this code happens to be
 
 Shannon&ndash;Fano coding is one of the earliest algorithms for constructing binary, prefix-free codes using known source-symbol probabilities. While Shannon&ndash;Fano codes are not optimal and, unlike lexicographical prefix codes, cannot be guaranteed to be near optimal, they remain useful due to their simplicity, ease of computation, and generally efficient code lengths in practice.
 
-### Algorithm
+### 2.1. Algorithm
 
 1. Sort the symbols in decreasing order of probability.
 2. Divide the ordered list into two parts so that the total probabilities of each part are as close as possible.
 3. Append the binary digit 0 to the codewords of all symbols in the first part and 1 to those in the second part.
 4. Recursively apply steps 2 and 3 to each part until every symbol has a unique codeword.
 
-### Example
+### 2.2. Example
 
 Let us apply the Shannon&ndash;Fano coding method to the symbols $`X = \{a, b, c, d, e\}`$ with probabilities
 
@@ -164,7 +164,7 @@ The following illustration shows the Shannon&ndash;Fano code space tree for this
 
 Huffman coding is a method for constructing optimal, prefix-free codes based on known source-symbol probabilities. Developed by David Huffman, it is historically the first algorithm discovered for building _optimal_ prefix-free codes. Huffman's algorithm is a greedy approach for constructing the code space tree: it begins by representing every source symbol as a leaf node. It then repeatedly combines the two least probable subtrees into a single node, building a binary tree from the bottom up.
 
-### Algorithm
+### 3.1. Algorithm
 
 1.  List all symbols with their probabilities.
 2.  Build a priority queue (or min-heap) of symbols based on probability.
@@ -174,7 +174,7 @@ Huffman coding is a method for constructing optimal, prefix-free codes based on 
   - Insert the new node back into the queue.
 4.  Assign binary digits to each branch (commonly 0 for left and 1 for right) to determine the codewords.
 
-### Example
+### 3.2. Example
 
 Suppose we have the source symbols $`X = \{a, b, c, d, e\}`$ with probabilities
 
@@ -229,17 +229,17 @@ The following illustration shows the Huffman code space tree for this code:
 
 ![Huffman Code Space Tree](../../assets/images/huffman-code.png)
 
-## Conclusion
+## 4. Conclusion
 
 We have compared three prefix-free coding methods for the same set of symbols:
 
-| Method          | Expected Codeword Length $`\bar{L}`$ |
-|-----------------|------------------------------------|
-| Lexicographical | 2.65                               |
-| Shannon&ndash;Fano    | 2.32                               |
-| Huffman         | 2.30                               |
+| Method             | Expected Codeword Length $`\bar{L}`$ |
+|--------------------|--------------------------------------|
+| Lexicographical    | 2.65                                 |
+| Shannon&ndash;Fano | 2.32                                 |
+| Huffman            | 2.30                                 |
 
-## In Relation to the MDL Principle
+## 5. In Relation to the MDL Principle
 
 In the context of Minimum Description Length (MDL) principle, we only care about the lengths of codewords, not their actual bit patterns. Shannon’s formula, $`\ell(x_{i}) \approx -\log_{D} p(x_{i})`$, provides a principled way to assign lengths when the symbol probabilities are known. If the probabilities are unknown, MDL still guides us to minimize the total description length, but the codeword lengths must be inferred from the data rather than derived from Shannon’s formula.
 
