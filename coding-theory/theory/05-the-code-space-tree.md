@@ -35,49 +35,51 @@ L = \{1, 2, 2, 2\}.
 
 At first glance this assignment looks plausible:
 
-- We need one codeword of length 1 (two possible choices: $0$ or $1$),
-- and three codewords of length 2 (four possible choices: $00, 01, 10, 11$).
+- We need one codeword of length 1 (two possible choices: $`0`$ or $`1`$),
+- and three codewords of length 2 (four possible choices: $`00, 01, 10, 11`$).
 
-However, a problem arise because of the prefix-free requirement. If we choose the length-1 codeword to be $0$, then any codeword that begins with $0$ cannot be used, thus ruling out $00$ and $01$. This leaves only $10$ and $11$ for the three length-2 codewords, which is insufficient. A similar issue arises if we attempted to choose $1$ as the length-1 codeword.
+However, a problem arise because of the prefix-free requirement. If we choose the length-1 codeword to be $`0`$, then any codeword that begins with $`0`$ cannot be used, thus ruling out $`00`$ and $`01`$. This leaves only $`10`$ and $`11`$ for the three length-2 codewords, which is insufficient. A similar issue arises if we attempted to choose $`1`$ as the length-1 codeword.
 
 Therefore, this length assignment cannot yield a prefix-free code. Moreover, this length assignment cannot yield any uniquely decodable code, because the short codeword blocks too many of the available sequences for the longer codewords.
 
 ### 1.3. A Third Example: A Valid Assignment
 
-Let $X = \{a,b,c\}$ be a source alphabet and $Y = \{0,1\}$ the binary code alphabet. Consider constructing a prefix-free code
-$C : X \to Y^{*}$ with codeword lengths
+Let $`X = \{a,b,c\}`$ be a source alphabet and $`Y = \{0,1\}`$ the binary code alphabet. Consider constructing a prefix-free code
+$`C : X \to Y^{*}`$ with codeword lengths
 
-$$L = \{1, 2, 2\}.$$
+```math
+L = \{1, 2, 2\}.
+```
 
 One possible assignment that realizes a prefix-free code with these lengths is:
 
-- $a \mapsto 0$
-- $b \mapsto 10$
-- $c \mapsto 11$
+- $`a \mapsto 0`$
+- $`b \mapsto 10`$
+- $`c \mapsto 11`$
 
-Here, the length-1 codeword $0$ is assigned to symbol $a$, while the remaining symbols $b$ and $c$ are assigned the length-2 codewords $10$ and $11$, respectively.
+Here, the length-1 codeword $`0`$ is assigned to symbol $`a`$, while the remaining symbols $`b`$ and $`c`$ are assigned the length-2 codewords $`10`$` and $`11`$, respectively.
 
 No codeword is a prefix of another, and so the code is indeed prefix-free, and therefore also uniquely decodable.
 
 ## 2. The Code Space Tree
 
-Let $X$ be a source alphabet and $Y$ a code alphabet. To develop an intuitive understanding of how codewords are organized and how their lengths are constrained, both in prefix-free and universal coding, it is helpful to construct a _universal prefix tree_ over $Y$. This infinite rooted tree provides a geometric representation of the set of all finite codewords, where each node corresponds to a unique string in $Y^{*}$, and the depth of a node corresponds to codeword length.
+Let $`X`$ be a source alphabet and $`Y`$ a code alphabet. To develop an intuitive understanding of how codewords are organized and how their lengths are constrained, both in prefix-free and universal coding, it is helpful to construct a _universal prefix tree_ over $`Y`$. This infinite rooted tree provides a geometric representation of the set of all finite codewords, where each node corresponds to a unique string in $`Y^{*}`$, and the depth of a node corresponds to codeword length.
 
 For any given coding scheme, the _code space tree_ is the subset of this universal tree consisting of the nodes associated with the actual codewords.
 
 ### 2.1. The Universal Prefix Tree
 
-A **universal prefix tree** is an infinite rooted tree that represents all possible finite codewords over a given code alphabet $Y$. Each node in the tree corresponds to a string in $Y^{*}$, with the root representing the empty string $\epsilon$. Edges connect a node to its children by appending a single symbol from $Y$.
+A **universal prefix tree** is an infinite rooted tree that represents all possible finite codewords over a given code alphabet $`Y`$. Each node in the tree corresponds to a string in $`Y^{*}`$, with the root representing the empty string $`\epsilon`$. Edges connect a node to its children by appending a single symbol from $`Y`$.
 
 The depth of a node corresponds to the length of the string (codeword) it represents. Each path from the root to a node corresponds to a unique codeword, and the structure naturally captures prefix relationships.
 
 Constructing the universal prefix tree is straightforward:
 
-1. Start with the root node representing the empty string $\epsilon$.
-2. For each node at depth $n$, create $|Y|$ children by appending each symbol from the code alphabet $Y$ to the node's string.
+1. Start with the root node representing the empty string $`\epsilon`$.
+2. For each node at depth $`n`$, create $`|Y|`$ children by appending each symbol from the code alphabet $`Y`$ to the node's string.
 3. Repeat indefinitely to capture all finite-length codewords.
 
-This tree provides a conceptual framework for visualizing the _entire code space_, showing all possible strings that could be used as codewords. The following image is an example of the universal prefix tree for a binary code alphabet $Y = \{0,1\}$:
+This tree provides a conceptual framework for visualizing the _entire code space_, showing all possible strings that could be used as codewords. The following image is an example of the universal prefix tree for a binary code alphabet $`Y = \{0,1\}`$:
 
 ![Universal Prefix Tree](../../assets/images/universal-prefix-tree.png)
 
