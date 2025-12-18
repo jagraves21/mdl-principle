@@ -25,13 +25,13 @@ Equivalently, using the length function $`\ell(x) = |C(x)|`$,
 \sum_{x \in X} |Y|^{-\ell(x)} \le 1.
 ```
 
-### Interpretation
+### 1.1. Interpretation
 
 - Each term $`D^{-L_{i}}`$ corresponds to the fraction of the full $`D`$-ary universal prefix tree occupied by a codeword of depth $`L_{i}`$.
 - The inequality ensures that the total "occupied space" in the code space tree does not exceed available capacity.
 - When the bound is satisfied, we can assign codewords so that no codeword is a prefix of any other, guaranteeing instantaneous and unique decoding.
 
-### Consequences
+### 1.2. Consequences
 
 - **Necessity:** Every prefix-free code must satisfy the Kraft inequality.
 - **Sufficiency:** Any set of integer lengths satisfying the inequality can be realized by an explicit construction of a prefix-free code (e.g., using a greedy tree assignment procedure). **MORE ON THIS**
@@ -54,13 +54,13 @@ Equivalently, using the length function $`\ell(x) = |C(x)|`$,
 \sum_{x \in X} |Y|^{-\ell(x)} \le 1.
 ```
 
-### Key Points
+### 2.1 Key Points
 
 - **Necessity:** Any uniquely decodable code, whether prefix-free or not, must satisfy this inequality.
 - **Difference from Kraft:** Unlike Kraft's Theorem, McMillan's result is **necessary but not sufficient** for uniquely decodable codes. That is to say, satisfying the inequality does not guarantee that a code with those lengths exists; it only constrains what is possible.
 - **Intuition:** The inequality ensures that the "code space" is not overfilled. Even when codewords can appear as prefixes of others (so long as the code is still uniquely decodable), the total fraction of the universal prefix tree cannot exceed 1.
 
-### Implications
+### 2.2. Implications
 
 - Prefix-free codes are a special case of uniquely decodable codes; for them, Kraft's inequality is both necessary and sufficient.
 - McMillan's inequality extends the length-space constraints to all uniquely decodable codes, providing a fundamental limit on what codeword lengths are possible.
@@ -91,7 +91,7 @@ The Kraft&ndash;McMillan inequalities serve as a bridge between general uniquely
 
 ## 4. Connecting Probabilities to Codeword Lengths
 
-### Shannon's Insight
+### 4.1. Shannon's Insight
 
 Claude Shannon's 1948 paper, *A Mathematical Theory of Communication*, founded the field of **information theory**. One of his fundamental insights was that the probability of a symbol determines how many bits are *unavoidably required* to represent it. Shannon showed that any prefix-free or uniquely decodable code assigning codeword lengths $`L_{i}`$ to source symbols with probabilities $`p_{i}`$ must satisfy an average-length constraint bounded below by the source entropy:
 
@@ -126,7 +126,7 @@ This result forms the theoretical basis of efficient source coding. Practical co
 
 Beyond data compression, Shannon's principle also underlies the MDL framework. In MDL, models or hypotheses that assign higher probability to observed data correspond to shorter descriptions, making learning equivalent to finding the explanation that yields the most compact encoding of the data.
 
-## 6. Implications for MDL
+## 5. Implications for MDL
 
 - Prefix codes ensure unambiguous decoding and instantaneous reading.
 - Codeword lengths, represented by the length function $`\ell`$, directly reflect _information content_.
