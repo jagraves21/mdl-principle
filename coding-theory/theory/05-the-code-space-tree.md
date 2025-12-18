@@ -57,7 +57,7 @@ One possible assignment that realizes a prefix-free code with these lengths is:
 - $`b \mapsto 10`$
 - $`c \mapsto 11`$
 
-Here, the length-1 codeword $`0`$ is assigned to symbol $`a`$, while the remaining symbols $`b`$ and $`c`$ are assigned the length-2 codewords $`10`$` and $`11`$, respectively.
+Here, the length-1 codeword $`0`$ is assigned to symbol $`a`$, while the remaining symbols $`b`$ and $`c`$ are assigned the length-2 codewords $`10`$ and $`11`$, respectively.
 
 No codeword is a prefix of another, and so the code is indeed prefix-free, and therefore also uniquely decodable.
 
