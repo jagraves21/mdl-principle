@@ -5,7 +5,7 @@ The Minimum Description Length (MDL) principle is an approach to model selection
 More formally, the MDL principle can be expressed as an optimization problem:
 
 ```math
-M^{*} = \arg\min_{M} \mathcal{L}_{\text{MDL}}(M)
+M^{*} = {\arg\min}_{M} \mathcal{L}_{\text{MDL}}(M)
 ```
 
 where the **MDL loss** is defined as:
