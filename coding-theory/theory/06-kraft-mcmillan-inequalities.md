@@ -1,4 +1,3 @@
-
 # Codeword Lengths and the Kraft&ndash;McMillan Inequalities
 
 Building upon the ideas of prefix-free codes and codeword lengths, we now explore the constraints that ensure unambiguous decoding. This will allow us to connect codeword lengths to probabilities and, ultimately, to the minimum description length (MDL) principle.
@@ -25,16 +24,16 @@ Equivalently, using the length function $`\ell(x) = |C(x)|`$,
 \sum_{x \in X} |Y|^{-\ell(x)} \le 1.
 ```
 
-### 1.1. Interpretation
+### Interpretation
 
 - Each term $`D^{-L_{i}}`$ corresponds to the fraction of the full $`D`$-ary universal prefix tree occupied by a codeword of depth $`L_{i}`$.
 - The inequality ensures that the total "occupied space" in the code space tree does not exceed available capacity.
 - When the bound is satisfied, we can assign codewords so that no codeword is a prefix of any other, guaranteeing instantaneous and unique decoding.
 
-### 1.2. Consequences
+### Consequences
 
 - **Necessity:** Every prefix-free code must satisfy the Kraft inequality.
-- **Sufficiency:** Any set of integer lengths satisfying the inequality can be realized by an explicit construction of a prefix-free code (e.g., using a greedy tree assignment procedure). **MORE ON THIS**
+- **Sufficiency:** Any set of integer lengths satisfying the inequality can be realized by an explicit construction of a prefix-free code (e.g., using a greedy tree assignment procedure).
 
 Thus, Kraft's Theorem completely characterizes the length sequences that are attainable by prefix-free coding schemes. This result forms the bridge between _abstract length assignments_ and _actual code constructions_, enabling the design of optimal codes once desired lengths have been chosen&mdash;most notably those derived from symbol probabilities in entropy coding and MDL theory.
 
@@ -54,22 +53,22 @@ Equivalently, using the length function $`\ell(x) = |C(x)|`$,
 \sum_{x \in X} |Y|^{-\ell(x)} \le 1.
 ```
 
-### 2.1 Key Points
+### Key Points
 
-- **Necessity:** Any uniquely decodable code, whether prefix-free or not, must satisfy this inequality.
-- **Difference from Kraft:** Unlike Kraft's Theorem, McMillan's result is **necessary but not sufficient** for uniquely decodable codes. That is to say, satisfying the inequality does not guarantee that a code with those lengths exists; it only constrains what is possible.
+- **Necessity:** Any uniquely decodable code, whether prefix-free or not, must satisfy this inequality.  
+- **Difference from Kraft:** Unlike Kraft's Theorem, McMillan's result is **necessary but not sufficient** for uniquely decodable codes. That is to say, satisfying the inequality does not guarantee that a code with those lengths exists; it only constrains what is possible.  
 - **Intuition:** The inequality ensures that the "code space" is not overfilled. Even when codewords can appear as prefixes of others (so long as the code is still uniquely decodable), the total fraction of the universal prefix tree cannot exceed 1.
 
-### 2.2. Implications
+### Implications
 
-- Prefix-free codes are a special case of uniquely decodable codes; for them, Kraft's inequality is both necessary and sufficient.
-- McMillan's inequality extends the length-space constraints to all uniquely decodable codes, providing a fundamental limit on what codeword lengths are possible.
+- Prefix-free codes are a special case of uniquely decodable codes; for them, Kraft's inequality is both necessary and sufficient.  
+- McMillan's inequality extends the length-space constraints to all uniquely decodable codes, providing a fundamental limit on what codeword lengths are possible.  
 
 This result forms a bridge to _entropy coding_ and _optimal code design_, since any code aiming to minimize expected length must obey these constraints.
 
 ## 3. From Uniquely Decodable Codes to Prefix-Free Codes
 
-A remarkable property in coding theory is that **any set of codeword lengths achievable by a uniquely decodable code can also be realized by a prefix-free code**. That is, if we have a uniquely decodable code $`C : X \to Y^{*}`$ that is not prefix-free, we can always find a prefix-free code $`C^{\prime} : X \to Y^{*}`$ such that
+A remarkable property in coding theory is that **any set of codeword lengths achievable by a uniquely decodable code can also be realized by a prefix-free code**. That is, if we have a uniquely decodable code $`C : X \to Y^{*}`$ that is not prefix-free, we can always find a prefix-free code $`C^{\prime} : X \to Y^{*}`$ such that 
 
 ```math
 \ell(C(x_{i})) = \ell(C^{\prime}(x_{i})) \quad \text{for all } x_i \in X.
@@ -84,16 +83,16 @@ To see why this must be the case, suppose we have a uniquely decodable code $`C 
 Since the Kraft inequality is both **necessary and sufficient** for prefix-free codes, it follows that there must exist a prefix-free code $`C^{\prime} : X \to Y^{*}`$ with the same set of codeword lengths:
 
 ```math
-\ell(C(x_i)) = \ell(C'(x_i)) \quad \text{for all } x_i \in X.
+\ell(C(x_{i})) = \ell(C^{\prime}(x_{i})) \quad \text{for all } x_{i} \in X.
 ```
 
 The Kraft&ndash;McMillan inequalities serve as a bridge between general uniquely decodable codes and practical prefix-free constructions, thus allowing us to focus on prefix-free codes rather than the more general uniquely decodable codes.
 
 ## 4. Connecting Probabilities to Codeword Lengths
 
-### 4.1. Shannon's Insight
+### Shannon's Insight
 
-Claude Shannon's 1948 paper, *A Mathematical Theory of Communication*, founded the field of **information theory**. One of his fundamental insights was that the probability of a symbol determines how many bits are *unavoidably required* to represent it. Shannon showed that any prefix-free or uniquely decodable code assigning codeword lengths $`L_{i}`$ to source symbols with probabilities $`p_{i}`$ must satisfy an average-length constraint bounded below by the source entropy:
+Claude Shannon's 1948 paper, _A Mathematical Theory of Communication_, founded the field of **information theory**. One of his fundamental insights was that the probability of a symbol determines how many bits are _unavoidably required_ to represent it. Shannon showed that any prefix-free or uniquely decodable code assigning codeword lengths $`L_{i}`$ to source symbols with probabilities $`p_{i}`$ must satisfy an average-length constraint bounded below by the source entropy:
 
 ```math
 H(X) = -\sum_{i=1}^n p_{i} \log_2 p_{i}.
@@ -102,10 +101,10 @@ H(X) = -\sum_{i=1}^n p_{i} \log_2 p_{i}.
 From this result follows the idea of an **ideal codeword length**. If codeword lengths could be chosen continuously (rather than restricted to integers), the optimal assignment would be
 
 ```math
-L_i \approx -\log_2 p_i.
+L_{i} \approx -\log_{2} p_{i}.
 ```
 
-This choice makes each codeword length proportional to the *information content* (or "surprisal") of the source symbol $`x_{i}`$. Consequently:
+This choice makes each codeword length proportional to the _information content_ (or "surprisal") of the source symbol $`x_{i}`$. Consequently:
 
 - More probable symbols receive shorter codewords.
 - Less probable symbols receive longer codewords.
@@ -122,11 +121,11 @@ where the expected codeword length is
 \bar{L} = \sum_{i=1}^{n} p_{i} L_{i} = \sum_{x \in X} p(x)\,\ell(x).
 ```
 
-This result forms the theoretical basis of efficient source coding. Practical coding methods, most notably Huffman coding, construct integer-length prefix codes that approximate the ideal lengths $`-\log_2 p_{i}`$ as closely as possible, minimizing the expected message length subject to the Kraft&ndash;McMillan constraints.
+This result forms the theoretical basis of efficient source coding. Practical coding methods, most notably Huffman coding, construct integer-length prefix codes that approximate the ideal lengths $`-\log_{2} p_{i}`$ as closely as possible, minimizing the expected message length subject to the Kraft&ndash;McMillan constraints.
 
 Beyond data compression, Shannon's principle also underlies the MDL framework. In MDL, models or hypotheses that assign higher probability to observed data correspond to shorter descriptions, making learning equivalent to finding the explanation that yields the most compact encoding of the data.
 
-## 5. Implications for MDL
+## 6. Implications for MDL
 
 - Prefix codes ensure unambiguous decoding and instantaneous reading.
 - Codeword lengths, represented by the length function $`\ell`$, directly reflect _information content_.
