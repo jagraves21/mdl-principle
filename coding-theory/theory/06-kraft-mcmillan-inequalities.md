@@ -39,7 +39,7 @@ Thus, Kraft's Theorem completely characterizes the length sequences that are att
 
 ## 2. McMillan Inequality (Uniquely Decodable Codes)
 
-While Kraft's Theorem characterizes prefix-free codes, we can ask a more general question: what constraints are placed on uniquely decodable codes, which may not be prefix-free? The answer is given by **McMillan's inequality**.
+While Kraft's Theorem characterizes prefix-free codes, we can ask a more general question: what constraints are placed on uniquely decodable codes, which may not be prefix-free? The answer is given by _McMillan's inequality_.
 
 **Theorem (McMillan).**  Let $`C: X \to Y^{*}`$ be a uniquely decodable code over an alphabet of size $`|Y| = D`$, with codeword lengths $`L_{1}, L_{2}, \dots, L_{m}`$. Then
 
@@ -56,7 +56,7 @@ Equivalently, using the length function $`\ell(x) = |C(x)|`$,
 ### Key Points
 
 - **Necessity:** Any uniquely decodable code, whether prefix-free or not, must satisfy this inequality.  
-- **Difference from Kraft:** Unlike Kraft's Theorem, McMillan's result is **necessary but not sufficient** for uniquely decodable codes. That is to say, satisfying the inequality does not guarantee that a code with those lengths exists; it only constrains what is possible.  
+- **Difference from Kraft:** Unlike Kraft's Theorem, McMillan's result is _necessary but not sufficient_ for uniquely decodable codes. That is to say, satisfying the inequality does not guarantee that a code with those lengths exists; it only constrains what is possible.  
 - **Intuition:** The inequality ensures that the "code space" is not overfilled. Even when codewords can appear as prefixes of others (so long as the code is still uniquely decodable), the total fraction of the universal prefix tree cannot exceed 1.
 
 ### Implications
@@ -68,7 +68,7 @@ This result forms a bridge to _entropy coding_ and _optimal code design_, since 
 
 ## 3. From Uniquely Decodable Codes to Prefix-Free Codes
 
-A remarkable property in coding theory is that **any set of codeword lengths achievable by a uniquely decodable code can also be realized by a prefix-free code**. That is, if we have a uniquely decodable code $`C : X \to Y^{*}`$ that is not prefix-free, we can always find a prefix-free code $`C^{\prime} : X \to Y^{*}`$ such that 
+A remarkable property in coding theory is that _any set of codeword lengths achievable by a uniquely decodable code can also be realized by a prefix-free code_. That is, if we have a uniquely decodable code $`C : X \to Y^{*}`$ that is not prefix-free, we can always find a prefix-free code $`C^{\prime} : X \to Y^{*}`$ such that 
 
 ```math
 \ell(C(x_{i})) = \ell(C^{\prime}(x_{i})) \quad \text{for all } x_i \in X.
@@ -80,7 +80,7 @@ To see why this must be the case, suppose we have a uniquely decodable code $`C 
 \sum_{i=1}^{m} |Y|^{-L_i} \le 1.
 ```
 
-Since the Kraft inequality is both **necessary and sufficient** for prefix-free codes, it follows that there must exist a prefix-free code $`C^{\prime} : X \to Y^{*}`$ with the same set of codeword lengths:
+Since the Kraft inequality is both _necessary and sufficient_ for prefix-free codes, it follows that there must exist a prefix-free code $`C^{\prime} : X \to Y^{*}`$ with the same set of codeword lengths:
 
 ```math
 \ell(C(x_{i})) = \ell(C^{\prime}(x_{i})) \quad \text{for all } x_{i} \in X.
@@ -92,7 +92,7 @@ The Kraft&ndash;McMillan inequalities serve as a bridge between general uniquely
 
 ### Shannon's Insight
 
-Claude Shannon's 1948 paper, _A Mathematical Theory of Communication_, founded the field of **information theory**. One of his fundamental insights was that the probability of a symbol determines how many bits are _unavoidably required_ to represent it. Shannon showed that any prefix-free or uniquely decodable code assigning codeword lengths $`L_{i}`$ to source symbols with probabilities $`p_{i}`$ must satisfy an average-length constraint bounded below by the source entropy:
+Claude Shannon's 1948 paper, _A Mathematical Theory of Communication_, founded the field of _information theory_. One of his fundamental insights was that the probability of a symbol determines how many bits are _unavoidably required_ to represent it. Shannon showed that any prefix-free or uniquely decodable code assigning codeword lengths $`L_{i}`$ to source symbols with probabilities $`p_{i}`$ must satisfy an average-length constraint bounded below by the source entropy:
 
 ```math
 H(X) = -\sum_{i=1}^n p_{i} \log_2 p_{i}.
