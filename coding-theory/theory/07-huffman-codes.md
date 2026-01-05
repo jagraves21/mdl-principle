@@ -110,7 +110,7 @@ Note that these are the same symbols that appeared in the previous example on th
 We begin by sorting the symbols by decreasing probability:
 
 ```math
-a (0.35),\ b (0.17),\ c (0.16),\ d (0.16),\ e (0.16)
+a(0.35),\ b(0.17),\ c(0.16),\ d(0.16),\ e(0.16)
 ```
 
 Next, we split the full list into two parts so that the total probabilities are as close as possible. The first part contains $`a`$ and $`b`$ with total probability $`0.35 + 0.17 = 0.52`$, and the second part contains $`c`$, $`d`$, and $`e`$ with total probability $`0.16 + 0.16 + 0.16 = 0.48`$. We assign the prefix $`0`$ to the first part and $`1`$ to the second part.
@@ -187,16 +187,16 @@ Suppose we have the source symbols $`X = \{a, b, c, d, e\}`$ with probabilities
 We initialize leaf nodes for each symbol:
 
 ```math
-[a(0.35), b(0.17), c(0.16), d(0.16), e(0.16)].
+[a(0.35),\ b(0.17),\ c(0.16),\ d(0.16),\ e(0.16)].
 ```
 
 Combine the least probable codes as follows:
 - Combine $`d(0.16)`$ and $`e(0.16)`$:
-  -  $`[a(0.35), de(0.32), b(0.17), c(0.16)]`$
+  -  $`[a(0.35),\ de(0.32),\ b(0.17),\ c(0.16)]`$
 - Combine $`b(0.17)`$ and $`c(0.16)`$:
-  -  $`[a(0.35), bc(0.33), de(0.32)]`$
+  -  $`[a(0.35),\ bc(0.33),\ de(0.32)]`$
 - Combine $`bc(0.33)`$ and $`de(0.32)`$:
-  -  $`[bcde(0.65), a(0.35)]`$
+  -  $`[bcde(0.65),\ a(0.35)]`$
 - Combine $`bcde(0.65)`$ and $`a(0.35)`$:
   -  $`[abcde(1.0)]`$
 
