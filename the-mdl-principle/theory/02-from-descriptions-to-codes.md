@@ -6,9 +6,9 @@ In this chapter, we move beyond that high-level view and make the notion of desc
 
 Once we choose to formalize descriptions using explicit coding schemes, description lengths become codeword lengths and are therefore subject to strict structural constraints. This shift from informal descriptions to descriptions realized through codes helps transition MDL from a guiding principle into a rigorous mathematical theory.
 
-## 2.1. Algorithmic MDL as an Ideal Framework
+## 2.1. Algorithmic MDL as an Ideal Reference
 
-Algorithmic MDL provides a conceptually clean formulation of description length. By identifying the description of data with the shortest program that generates it, Kolmogorov complexity captures the intrinsic regularity of a dataset independently of any modeling assumptions. In this sense, algorithmic MDL represents an ideal framework: the shortest possible description of the data.
+Algorithmic MDL provides a conceptually clean formulation of description length. By identifying the description of data with the shortest program that generates it, Kolmogorov complexity captures the intrinsic regularity of a dataset independently of any modeling assumptions. In this sense, algorithmic MDL represents an _ideal reference_: the shortest possible description of the data.
 
 > Note: The additive constant depends on the choice of universal Turing machine (i.e., programming language). Different machines may encode the same program differently, but the difference is bounded by a fixed constant independent of the dataset.
 
