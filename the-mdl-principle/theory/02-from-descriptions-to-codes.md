@@ -15,10 +15,9 @@ Algorithmic MDL provides a conceptually clean formulation of description length.
 However, this idealization comes at a fundamental cost; Kolmogorov complexity is uncomputable, and there exists no general algorithm that, given an arbitrary dataset, can determine the length of its shortest generating program. As a result, algorithmic MDL cannot be used directly as a practical model selection criterion. Nevertheless, it helps to formalize what MDL ultimately seeks to approximate: the shortest effective description of the data. Practical implementations of the MDL principle can be seen as attempts to approximate Kolmogorov complexity using restricted, computable descriptions.
 
 ## 2.2. Statistical MDL as a Computable Approximation
+Statistical MDL provides a practical, computable approximation to algorithmic MDL by restricting attention to a specific class of descriptions in the form of encodings defined by explicit coding schemes. Rather than allowing arbitrary programs, descriptions are constructed using well-defined codes that assign binary strings to models, parameters, and data.
 
-Statistical MDL provides a practical, computable approximation to algorithmic MDL by restricting attention to a specific class of descriptions: _encodings defined by explicit coding schemes_. Rather than allowing arbitrary programs, descriptions are constructed using well-defined codes that assign binary strings to models, parameters, and data.
-
-In statistical MDL, **descriptions are codes**. A description of an object, whether it is a model, a set of parameters, or the data given a model, is represented as a binary string produced by a coding scheme. The **description length** is simply the length of that binary string. This formal identification of descriptions with codes allows statistical MDL to be fully computable, while still capturing the essence of the algorithmic notion: shorter descriptions correspond to simpler, more efficient explanations of the data.
+In statistical MDL, **descriptions are codes**. A description of an object, whether it is a model, a set of parameters, or the data given a model, is represented as a binary string produced by a coding scheme. The **description length** is simply the length of that binary string. This formal identification of descriptions with codes allows statistical MDL to be fully computable, while still capturing the essence of the algorithmic notion that shorter descriptions correspond to simpler, more efficient explanations of the data.
 
 The MDL objective
 
@@ -43,7 +42,7 @@ The relationship between algorithmic and statistical MDL can be formalized as fo
 
 ```math
 L_{\text{stat}}(D) = K(D) + c
-``
+```
 
 _if and only if_ the statistical code is sufficiently expressive to simulate a universal Turing machine.
 
