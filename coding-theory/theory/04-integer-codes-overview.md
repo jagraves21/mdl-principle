@@ -2,7 +2,7 @@
 
 Integer codes are **binary, prefix-free codes** designed to represent integers efficiently. They are widely used when encoding sequences of numbers _without knowing the probability distribution in advance_; encoding methods that take advantage of known probabilities will be discussed later.
 
-We will first introduce the concept of _codeword lengths_, then explore common integer codes, and finally discuss _universal codes_.
+Here we formalize the notion of _codeword lengths_ introduced in previous chapters. This provides a rigorous foundation for analyzing and comparing codes. We then explore common integer codes and finally discuss _universal codes_.
 
 ## 1. Codeword Lengths
 
