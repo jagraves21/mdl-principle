@@ -70,8 +70,6 @@ Conversely, the Kraft&ndash;McMillan theorem guarantees that any collection of l
 
 ## 2.5. Models and Data as Joint Descriptions
 
-Equivalently, this two-part construction defines
-
 Under statistical MDL, the description of a dataset is typically constructed as a two-part code. One part encodes the model, and the second encodes the data in a way that depends upon the model. The total description length is therefore written as
 
 ```math
