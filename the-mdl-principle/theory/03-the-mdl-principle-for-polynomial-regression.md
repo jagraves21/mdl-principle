@@ -80,7 +80,7 @@ Operationally, the dataset can be recovered from its encodings as follows:
    - Divide by the scaling factor used during encoding to recover $`r_{i}`$ at the specified precision.  
 4. Reconstruct the original outputs $`y_{i}`$ using the model predictions:  
 ```math
-y_{i} = \hat{y}_{i} + r_{i}, \quad \text{where } \hat{y}_{i} = P(x_{i}).
+y_{i} = \hat{y}_{i} + r_{i}, \quad \text{where} \quad \hat{y}_{i} = P(x_{i}).
 ```
 
 In this way, both the model and the data are fully recoverable from their encoded representations, providing a concrete realization of the total description length $`L_{\text{MDL}}(P) = L(P) + L(D \mid P)`$ in bits.
