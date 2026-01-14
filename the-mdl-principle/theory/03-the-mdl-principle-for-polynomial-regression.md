@@ -1,4 +1,3 @@
-
 # 3. The MDL Principle for Polynomial Regression
 
 In this chapter, we illustrate the MDL principle using a concrete example, polynomial regression, where the goal is to select an appropriate polynomial model for a dataset. This example demonstrates how MDL naturally balances model complexity and data fit using explicit code lengths, without relying on probabilistic assumptions or standard model selection criteria such as the Bayesian Information Criterion (BIC) or the Akaike Information Criterion (AIC).
@@ -50,15 +49,11 @@ In this way, both the degree and the coefficients are converted into a sequence 
 
 ## 3.3. Encoding the Data Given the Model
 
-Once a model has been fixed, we need a way to encode the dataset given the model in order to define the second term of the total description length, $`L(D \mid P)`$. A natural approach is to encode both the input values $`x_{i}`$ and the residuals $`r_{i} = y_{i} - \hat{y}_{i}`$, where $`\hat{y}_{i}`$ are the model's predictions.
+Once a model has been fixed, we need a way to encode the dataset given the model in order to define the second term of the total description length, $`L(D \mid P)`$. A natural approach is to encode both the input values $`x_{i}`$ and the residuals $`r_{i} = y_{i} - \hat{y}_{i}`$, where $`\hat{y}_{i}`$ are the model's predictions. However, special care must be taken with the residuals to ensure exact recoverability of the original dataset.
 
-Note that these residuals must be computed using the rounded coefficients that were used to encode the model and the rounded input values $`x_{i}`$ values. Because both the predictions and observations are derived from quantities available at decoding time, the residuals have a fixed, well-defined precision determined by the data and model precisions.
+The residuals must be computed using the rounded coefficients that were used when encoding the model, along with the rounded input values $`x_{i}`$ ​ and rounded observed values $`y_{i}`$​. Because the predictions $`\hat y_{i}`$ are computed from rounded coefficients and rounded inputs, and the observations $`y_{i}`$ are themselves rounded, each residual $`r_{i} = y_{i} - \hat y_{i}`$ lies on a fixed decimal grid whose precision is determined by the chosen data and model precisions. As a result, no further rounding is required prior to encoding. This is essential, because if the residuals did require additional rounding for encoding, the observed $`y_{i}`$'s could not be recovered exactly (up to their stored precision).
 
-These residuals can then be scaled, mapped to positive integers using a one-to-one correspondence, and encoded using a standard integer code such as the Elias gamma or delta code. This ensures that the original dataset (at the chosen precision) can be recovered exactly from the encoded model and residuals.
-
-And so, we begin by encoding the number of observations $`n`$ using a standard integer code (e.g., Elias delta or gamma code). 
-
-The input values $`x_i`$ and the residuals $`r_i`$ are then scaled according to their induced precision, mapped to positive integers using a one-to-one correspondence, and encoded using a standard integer code, such as the Elias delta or gamma code.
+And so, we begin by encoding the number of observations $`n`$ using a standard integer code (e.g., Elias delta or gamma code). The input values $`x_i`$ and the residuals $`r_i`$ are then scaled according to their induced precision, mapped to positive integers using a one-to-one correspondence, and encoded using a standard integer code, such as the Elias delta or gamma code.
 
 In this way, both the input values and residuals are converted into sequences of integers that can be efficiently encoded, providing a concrete realization of $`L(D \mid P)`$ in bits.
 
@@ -68,23 +63,23 @@ Operationally, the dataset can be recovered from its encodings as follows:
 
 **Decode the Model $`P`$**:
 
-1. Decode the degree $`d`$ of the polynomial using the chosen integer code. If the degree was encoded as $`d+1`$ to handle zero, subtract 1 to recover the actual degree.  
-2. Use the value of $`d`$ to decode $`d+1`$ integers using the chosen integer code and convert them to coefficients:  
-   - Decode each mapped positive integer for the coefficient.  
-   - Invert the one-to-one mapping to recover signed integers.  
-   - Divide by the scaling factor used during encoding to recover the coefficient at the specified precision.  
+1. Decode the degree $`d`$ of the polynomial using the chosen integer code. If the degree was encoded as $`d+1`$ to handle zero, subtract 1 to recover the actual degree.
+2. Use the value of $`d`$ to decode $`d+1`$ integers using the chosen integer code and convert them to coefficients:
+   - Decode each mapped positive integer for the coefficient.
+   - Invert the one-to-one mapping to recover signed integers.
+   - Divide by the scaling factor used during encoding to recover the coefficient at the specified precision.
 
 **Decode the Data Using the Model**:
 
-1. Decode the number of observations $`n`$ using the chosen integer code.  
-2. Use the value of $`n`$ to decode $`n`$ integers using the chosen integer code and convert them to the inputs $`x_{i}`$:  
-   - Decode each mapped positive integer for $`x_{i}`$.  
-   - Invert the one-to-one mapping to recover signed integers.  
-   - Divide by the scaling factor used during encoding to recover $`x_{i}`$ at the specified precision.  
-3. Use the value of $`n`$ to decode $`n`$ integers using the chosen integer code and convert them to residuals $`r_{i}`$:  
-   - Decode each mapped positive integer for $`r_{i}`$.  
-   - Invert the one-to-one mapping to recover signed integers.  
-   - Divide by the scaling factor used during encoding to recover $`r_{i}`$ at the specified precision.  
+1. Decode the number of observations $`n`$ using the chosen integer code.
+2. Use the value of $`n`$ to decode $`n`$ integers using the chosen integer code and convert them to the inputs $`x_{i}`$:
+   - Decode each mapped positive integer for $`x_{i}`$.
+   - Invert the one-to-one mapping to recover signed integers.
+   - Divide by the scaling factor used during encoding to recover $`x_{i}`$ at the specified precision.
+3. Use the value of $`n`$ to decode $`n`$ integers using the chosen integer code and convert them to residuals $`r_{i}`$:
+   - Decode each mapped positive integer for $`r_{i}`$.
+   - Invert the one-to-one mapping to recover signed integers.
+   - Divide by the scaling factor used during encoding to recover $`r_{i}`$ at the specified precision.
 4. Reconstruct the original outputs $`y_{i}`$ using the model predictions: $`y_{i} = \hat{y}_{i} + r_{i}`$, where $`\hat{y}_{i} = P(x_{i})`$.
 
 In this way, both the model and the data are fully recoverable from their encoded representations, providing a concrete realization of the total description length $`L_{\text{MDL}}(P) = L(P) + L(D \mid P)`$ in bits.
@@ -95,8 +90,8 @@ In the preceding sections, we described how to encode both the model and the dat
 
 Despite providing a concrete illustration of the MDL principle, our approach has several limitations. One important issue is the choice of integer codes. Different parts of the description naturally call for different coding strategies:
 
-- **The degree of the polynomial** is typically small, so a compact code such as the Elias gamma code is appropriate.  
-- **The magnitudes of the coefficients, residuals, and data values** ($`x_{i}`$, $`y_{i}`$) are unknown a priori. For small integers, the Elias gamma code works well; for medium-sized integers, the Elias delta code is preferable; for extremely large integers, the Elias omega code may be more efficient.  
+- **The degree of the polynomial** is typically small, so a compact code such as the Elias gamma code is appropriate.
+- **The magnitudes of the coefficients, residuals, and data values** ($`x_{i}`$, $`y_{i}`$) are unknown a priori. For small integers, the Elias gamma code works well; for medium-sized integers, the Elias delta code is preferable; for extremely large integers, the Elias omega code may be more efficient.
 
 Because these magnitudes are not known in advance, the choice of integer code is essentially arbitrary. This arbitrariness introduces an element of subjectivity into the total description length, and in some cases may lead to suboptimal model selection if the coding scheme is poorly matched to the data.
 
