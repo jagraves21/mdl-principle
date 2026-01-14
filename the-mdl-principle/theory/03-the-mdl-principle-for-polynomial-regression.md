@@ -1,3 +1,4 @@
+
 # 3. The MDL Principle for Polynomial Regression
 
 In this chapter, we illustrate the MDL principle using a concrete example, polynomial regression, where the goal is to select an appropriate polynomial model for a dataset. This example demonstrates how MDL naturally balances model complexity and data fit using explicit code lengths, without relying on probabilistic assumptions or standard model selection criteria such as the Bayesian Information Criterion (BIC) or the Akaike Information Criterion (AIC).
@@ -51,7 +52,13 @@ In this way, both the degree and the coefficients are converted into a sequence 
 
 Once a model has been fixed, we need a way to encode the dataset given the model in order to define the second term of the total description length, $`L(D \mid P)`$. A natural approach is to encode both the input values $`x_{i}`$ and the residuals $`r_{i} = y_{i} - \hat{y}_{i}`$, where $`\hat{y}_{i}`$ are the model's predictions.
 
-We begin by encoding the number of observations $`n`$ using a standard integer code (e.g., Elias delta or gamma code). Then, both the input values $`x_{i}`$ and the residuals $`r_{i}`$ can be encoded in a manner analogous to the polynomial coefficients. We begin by rounding each residual to a fixed precision, then scale and map them to positive integers using a one-to-one correspondence. These integers can then be encoded using a standard integer code, such as the Elias delta or gamma code.
+Note that these residuals must be computed using the rounded coefficients that were used to encode the model and the rounded input values $`x_{i}`$ values. Because both the predictions and observations are derived from quantities available at decoding time, the residuals have a fixed, well-defined precision determined by the data and model precisions.
+
+These residuals can then be scaled, mapped to positive integers using a one-to-one correspondence, and encoded using a standard integer code such as the Elias gamma or delta code. This ensures that the original dataset (at the chosen precision) can be recovered exactly from the encoded model and residuals.
+
+And so, we begin by encoding the number of observations $`n`$ using a standard integer code (e.g., Elias delta or gamma code). 
+
+The input values $`x_i`$ and the residuals $`r_i`$ are then scaled according to their induced precision, mapped to positive integers using a one-to-one correspondence, and encoded using a standard integer code, such as the Elias delta or gamma code.
 
 In this way, both the input values and residuals are converted into sequences of integers that can be efficiently encoded, providing a concrete realization of $`L(D \mid P)`$ in bits.
 
