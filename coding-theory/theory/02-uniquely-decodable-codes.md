@@ -1,10 +1,11 @@
-# Uniquely Decodable Codes
+
+# 2. Uniquely Decodable Codes
 
 Before diving into formal definitions, let's look at a few example codes:
 
-## 1. Motivation
+## 2.1. Motivation
 
-### 1.1. A Uniquely Decodable Code
+### 2.1.1. A Uniquely Decodable Code
 
 Let $`X = \{a, b, c\}`$ be a source alphabet, and consider the binary code $`C_{1}`$:
 
@@ -15,7 +16,7 @@ Let $`X = \{a, b, c\}`$ be a source alphabet, and consider the binary code $`C_{
 This code is _uniquely decodable_. That is, any concatenation of codewords from $`C_{1}`$ can be decoded in exactly one way.
 _(This can be shown using the Sardinas&ndash;Patterson Algorithm, which is introduced later.)_
 
-### 1.2. A Non-Uniquely Decodable Code
+### 2.1.2. A Non-Uniquely Decodable Code
 
 Now consider the binary code $`C_{2}`$ over $X$ given by:
 
@@ -30,7 +31,7 @@ This code is _not uniquely decodable_. For example, the sequence $`01`$ could co
 
 This ambiguity motivates the need for uniquely decodable codes, thus ensuring messages can be decoded unambiguously.
 
-### 1.3. Morse Code
+### 2.1.3. Morse Code
 
 In the Morse code alphabet:
 
@@ -50,17 +51,17 @@ could be decoded as either
 E\,A\,E \quad \text{or} \quad F.
 ```
 
-To resolve this ambiguity, Morse code uses pauses of varying lengths between dots and dashes (symbols within a letter), between letters, and between words. Including these pauses effectively introduces more than two "symbols" in practice. While the basic signals are binary (dot and dash), the timing of pauses acts like additional symbols, making Morse code behave more like a 5-ary code in terms of transmission.
+To resolve this ambiguity, Morse code uses pauses of varying lengths between dots and dashes (symbols within a letter), between letters, and between words. Including these pauses effectively introduces more than two 'symbols' in practice. While the basic signals are binary (dot and dash), the timing of pauses acts like additional symbols, making Morse code behave more like a 5-ary code in terms of transmission.
 
 With these examples in mind, we can now formally define uniquely decodable codes.
 
-## 2. Definition of Uniquely Decodable Codes
+## 2.2. Definition of Uniquely Decodable Codes
 
 Formally, a code $`C : X \to Y^{*}`$ is **uniquely decodable** if any finite concatenation of its codewords can be decoded in exactly one way.
 
 In other words, no two different sequences of source symbols produce the same concatenated codeword sequence. This ensures that any finite concatenation of codewords can be decoded in exactly one way.
 
-## 3. Why Uniquely Decodable Codes Matter
+## 2.3. Why Uniquely Decodable Codes Matter
 
 Uniquely decodable codes are important for several reasons:
 
@@ -72,7 +73,7 @@ Uniquely decodable codes are important for several reasons:
 
 4. **Practical Reliability:** In data transmission or storage, uniquely decodable codes ensure that messages can always be restored correctly, even in complex or variable-length coding scenarios.
 
-## 4. Special Types of Uniquely Decodable Codes
+## 2.4. Special Types of Uniquely Decodable Codes
 
 Among uniquely decodable codes, two important subclasses are **prefix-free codes** and **instantaneously decodable codes**. Understanding these helps in practical encoding and decoding.
 
