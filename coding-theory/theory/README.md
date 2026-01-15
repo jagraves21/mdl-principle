@@ -32,5 +32,5 @@ These topics provide intuition, visualization, and additional theory. They are _
 
 The following topic is _not needed_ to apply the MDL principle:
 
-[**08-sardinas-patterson.mm**](08-sardinas-patterson.md) &mdash; Introduces the Sardinas–Patterson algorithm to test whether any finite code is uniquely decodable.
+[**08-sardinas-patterson.md**](08-sardinas-patterson.md) &mdash; Introduces the Sardinas–Patterson algorithm to test whether any finite code is uniquely decodable.
 
