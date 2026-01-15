@@ -1,4 +1,3 @@
-
 # 1. What is a Code?
 
 In coding theory, a _code_ is a systematic way to represent information from one set of symbols using another set of symbols. Codes allow us to efficiently store, transmit, and manipulate data.
@@ -25,7 +24,7 @@ The **image** of $C$, denoted $\text{Im}(C)$, is called the **codebook** of $C$.
 
 Informally, a code assigns a string of symbols (from $`Y`$) to every symbol in $`X`$. If $`Y=\{0,1\}`$, then $`C`$ is said to be a **binary code**.
 
-### 1.1.1 Encoding Messages via Concatenation
+### 1.1.1. Encoding Messages via Concatenation
 
 A **message** is a finite sequence of source symbols $`x_{1} x_{2} \cdots x_{n} \in X^{*}`$. Once we have a code $`C: X \to Y^{*}`$, we can encode a message by **juxtaposing (concatenating) the codewords** of each source symbol in order.
 
@@ -49,7 +48,7 @@ C(b)C(c) = 01\_1 \rightarrow 011.
 
 _Note: The underscores in the above examples are included **only for readability** to separate codewords; they are not part of the actual code or encoded message._
 
-## 1.2. Fixed-Length vs. Variable-Length Codes
+### 1.1.2. Fixed-Length vs. Variable-Length Codes
 
 Suppose we wish to transmit a long message in which some source symbols occur much more frequently than others. The **average codeword length** (also called the **expected codeword length**) of a code is the expected number of code symbols per source symbol and is given by
 
@@ -69,9 +68,9 @@ A **variable-length code** assigns codewords of different lengths to different s
 
 By assigning shorter codewords to high-probability symbols, we _minimize the expected message length_. This principle is the foundation of Huffman coding and underpins the Minimum Description Length (MDL) principle, where shorter codes correspond to simpler or more likely explanations of data.
 
-## 1.3. Examples
+## 1.2. Examples
 
-### 1.3.1 ASCII (Fixed-Length)
+### 1.2.1. ASCII (Fixed-Length)
 
 - Source alphabet: letters A&ndash;Z, digits 0&ndash;9, punctuation.
 - Code alphabet: $`\{0, 1\}`$ (bits).
@@ -80,7 +79,7 @@ By assigning shorter codewords to high-probability symbols, we _minimize the exp
   - $`A \mapsto 01000001`$
   - $`B \mapsto 01000010`$
 
-### 1.3.2 Morse Code (Variable-Length)
+### 1.2.2. Morse Code (Variable-Length)
 
 - Source alphabet: letters and digits.
 - Code alphabet: $`\{\cdot, -\}`$ (dots and dashes).
@@ -89,7 +88,7 @@ By assigning shorter codewords to high-probability symbols, we _minimize the exp
   - $`B \mapsto - \cdot\ \cdot\ \cdot`$
   - $`E \mapsto \cdot`$
 
-## 1.4. Why Codes Matter
+## 1.3. Why Codes Matter
 
 Codes are not just for compression. They also provide a measure of information:
 
@@ -98,7 +97,7 @@ Codes are not just for compression. They also provide a measure of information:
 
 Codes are also essential in communication and storage systems. For example, digital data sent over the internet or stored on a hard drive is often encoded with codes that allow error detection and correction. This ensures that messages can be transmitted reliably even in the presence of noise or data corruption.
 
-## 1.5. Next Steps
+## 1.4. Next Steps
 
 Next, we explore essential concepts and techniques for constructing and analyzing codes, covering decodability, efficient encoding, codeword structure, and tools for visualizing and verifying code properties.
 
