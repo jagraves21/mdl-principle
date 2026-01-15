@@ -1,10 +1,10 @@
-# Integer Codes Overview
+# 4. Integer Codes Overview
 
 Integer codes are **binary, prefix-free codes** designed to represent integers efficiently. They are widely used when encoding sequences of numbers _without knowing the probability distribution in advance_; encoding methods that take advantage of known probabilities will be discussed later.
 
-Here we formalize the notion of _codeword lengths_ introduced in previous chapters. This provides a rigorous foundation for analyzing and comparing codes. We then explore common integer codes and finally discuss _universal codes_.
+Here we formalize the notion of _codeword lengths_ introduced in previous chapters. This provides a rigorous foundation for analyzing and comparing codes. We then explore common integer codes before finally discussing _universal codes_.
 
-## 1. Codeword Lengths
+## 4.1. Codeword Lengths
 
 For a code $`C: X \to Y^{*}`$ over an alphabet $`Y`$:
 
@@ -37,13 +37,13 @@ The **total encoded length** is obtained by the additive extension of the length
 
 Thus, the description length of any message is simply the sum of the lengths of its individual symbol codewords.
 
-The goal is to design a code $`C`$ whose induced length function $`\ell(x) = |C(x)|`$ ensures _unique decoding_ while minimizing the _expected message length_. Later, we'll see how these lengths can be chosen based on symbol probabilities to achieve efficient encodings.
+The goal is to design a code $`C`$ whose induced length function, $`\ell(x) = |C(x)|`$, ensures _unique decoding_ while minimizing the _expected message length_. Later, we'll see how these lengths can be chosen based on symbol probabilities to achieve efficient encodings.
 
-## 2. Common Integer Codes
+## 4.2. Common Integer Codes
 
 There are several important integer coding schemes, each with its own strategy for representing integers as sequences of bits. Understanding these codes in terms of their codeword lengths helps us see how efficiently they encode small versus large integers. In the following sections, we will introduce some widely used codes and examine how their codeword lengths grow with the integer $`n`$.
 
-### 2.1 Unary Code
+### 4.2.1 Unary Code
 
 The unary code is one of the simplest codes for positive integers. It is a _variable-length, prefix-free_ code.
 
@@ -62,7 +62,7 @@ For a positive integer $`n`$, the unary code $`u(n)`$ is constructed as follows:
 | 5     | 00001      | 5           |
 | 6     | 000001     | 6           |
 | 7     | 0000001    | 7           |
-| 8     | 00000001   | 9           |
+| 8     | 00000001   | 8           |
 | 9     | 000000001  | 9           |
 | 10    | 0000000001 | 10          |
 
@@ -70,7 +70,7 @@ Observe that the length of the unary codeword grows **linearly** with $`n`$ (i.e
 
 _**Note:** There are alternative definitions of unary code that swap the roles of 0s and 1s, and some versions define unary codes for all non-negative integers (including zero)._
 
-### 2.2 Elias Gamma Code
+### 4.2.2 Elias Gamma Code
 
 The Elias gamma code is a _variable-length, prefix-free code_ for encoding positive integers.
 
@@ -105,7 +105,7 @@ The Elias gamma code is efficient for small integers, and its codeword length
 
 grows **logarithmically** with $`n`$.
 
-### 2.3 Elias Delta Code
+### 4.2.3 Elias Delta Code
 
 The Elias delta code is a _variable-length, prefix-free code_ designed to efficiently encode positive integers, improving on Elias gamma for larger values.
 
@@ -140,13 +140,13 @@ The Elias delta code is more efficient than Elias gamma for larger integers, wit
 
 growing _slightly faster than $`\log_2 n`$ but much slower than linear_.
 
-### 2.4 Fibonacci Code
+### 4.2.4 Fibonacci Code
 
 The Fibonacci code is a _variable-length, prefix-free code_ that encodes positive integers using sums of non-consecutive Fibonacci numbers, known as the _Zeckendorf representation_.
 
 _**Note:** In this section, we define the Fibonacci sequence as $`F_{1} = 1, F_{2} = 1, F_{3} = 2, \dots`$, so the [Zeckendorf representation](https://en.wikipedia.org/wiki/Zeckendorf%27s_theorem) of any positive integer uses Fibonacci numbers $`F_{k}`$ with $`k \ge 2`$._
 
-#### 2.4.1 Zeckendorf Representation
+#### 4.2.4.1 Zeckendorf Representation
 
 The **Zeckendorf representation** expresses any positive integer $`n`$ as a sum of _non-consecutive Fibonacci numbers_:
 
@@ -172,7 +172,7 @@ To represent $`n = 100`$:
 - Largest Fibonacci $`\leq`$ 3 is $`F_4 = 3`$, remainder $`0`$
 - So $`100 = F_{11} + F_6 + F_4`$
 
-#### 2.4.2 Constructing Fibonacci Codewords
+#### 4.2.4.2 Constructing Fibonacci Codewords
 
 For a positive integer $`n`$, the Fibonacci code $`F(n)`$ is constructed as follows:
 
@@ -203,7 +203,7 @@ The Fibonacci code is efficient and its codeword length grows asymptotically as
 
 where $`\phi`$ is the golden ratio. This growth is _faster than $`\log_{2}`$ but still much slower than linear_, making it a good universal code for integers.
 
-## 3. Universal Codes
+## 4.3. Universal Codes
 
 A **universal code for positive integers** is a prefix-free code
 
@@ -223,7 +223,7 @@ All of the integer codes discussed previously, except for the unary code, are un
 
 _**Note:** "Universal" in this context specifically refers to codes for positive integers, and not general sequences or source distributions. In information theory, the term **universal coding** can also refer to codes that efficiently encode sequences from unknown distributions, which is a broader concept._
 
-## 4. Other Notable Integer Codes
+## 4.4. Other Notable Integer Codes
 
 Several additional integer coding schemes are widely used in practice, often tailored for specific applications:
 
