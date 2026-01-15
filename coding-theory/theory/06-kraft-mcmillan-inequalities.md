@@ -90,6 +90,10 @@ The Kraft&ndash;McMillan inequalities serve as a bridge between general uniquely
 
 ## 6.4. Connecting Probabilities to Codeword Lengths
 
+## 6.4. Connecting Codeword Lengths to Probabilities
+
+Having established the Kraft&ndash;McMillan inequalities and the relationship between uniquely decodable and prefix-free codes, we can now connect codeword lengths to the probabilities of source symbols. This connection was first formalized by Claude Shannon, underpins much of modern information theory, and is leveraged in the minimum description length principle.
+
 ### 6.4.1 Shannon's Insight
 
 Claude Shannon's 1948 paper, _A Mathematical Theory of Communication_, founded the field of _information theory_. One of his fundamental insights was that the probability of a symbol determines how many bits are _unavoidably required_ to represent it. Shannon showed that any prefix-free or uniquely decodable code assigning codeword lengths $`L_{i}`$ to source symbols with probabilities $`p_{i}`$ must satisfy an average-length constraint bounded below by the source entropy:
