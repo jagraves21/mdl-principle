@@ -1,17 +1,16 @@
-
-# Prefix-Free Codes (Instantaneous Codes)
+# 3. Prefix-Free Codes (Instantaneous Codes)
 
 Previously, we noted that we want messages to be able to be decoded without ambiguity; therefore, we use _uniquely decodable codes_. Another desirable property is that decoding should be efficient.
 
-One particularly useful property is _instantaneous decoding_, which means that each symbol can be decoded as soon as its codeword is read, without the need to look ahead at subsequent symbols.
+One particularly useful property is _instantaneous decoding_, which means that each symbol can be decoded as soon as its codeword is read, without the need to  ahead at subsequent symbols.
 
-## 1. Instantaneous Decoding
+## 3.1. Instantaneous Decoding
 
 A code is **instantaneously decodable** if the decoder can determine the end of each codeword immediately upon reading it.
 
 In other words, you never need to read past the current codeword to decide how to decode the current source symbol.
 
-## 2. A Code That Is _Not_ Instantaneously Decodable
+## 3.2. A Code That Is _Not_ Instantaneously Decodable
 
 Consider the code $`C_{1}`$ given by:
 
@@ -33,10 +32,10 @@ The decoder must therefore read the next symbol before it can decide how to deco
 
 Hence, this code:
 
-- Is **not instantaneous**, because decoding requires look-ahead.
+- Is **not instantaneous**, because decoding requires lookahead.
 - Is still **uniquely decodable**, since no complete message can be parsed in more than one way (a fact that can be established using the Sardinas&ndash;Patterson algorithm).
 
-## 3. An Instantaneously Decodable Code
+## 3.3. An Instantaneously Decodable Code
 
 Now consider the code $`C_{2}`$ defined by:
 
@@ -54,13 +53,13 @@ In this case, $`C_{2}`$ is instantaneously decodable. To see this, observe that 
 
 Once the 0 is read, the decoder immediately knows which symbol has been encoded. No lookahead is needed at any step. Therefore, this code is instantaneously decodable.
 
-## 4. Prefix-Free Codes
+## 3.4. Prefix-Free Codes
 
 A code is said to be **prefix-free** (or simply a **prefix code**) if no codeword is a prefix of any other codeword.
 
 Let's see how this definition applies to our earlier examples.
 
-### 4.1. A Non-Instantaneous Code
+### 3.4.1. A Non-Instantaneous Code
 
 Recall the code $`C_{1}`$ from before where
 
@@ -69,7 +68,7 @@ Recall the code $`C_{1}`$ from before where
 
 Here $`0`$ is a prefix of $`01`$, and so this code is not prefix-free.
 
-### 4.2. A Prefix-Free Code
+### 3.4.2. A Prefix-Free Code
 
 Now recall the code $`C_{2}`$ from above with
 
@@ -80,7 +79,7 @@ Now recall the code $`C_{2}`$ from above with
 
 Since no codeword appears at the beginning of any other codeword, this code is prefix-free.
 
-## 5. Equivalence of Prefix-Free and Instantaneous Codes
+## 3.5. Equivalence of Prefix-Free and Instantaneous Codes
 
 The structural property of being prefix-free and the operational property of being instantaneously decodable are exactly the same, as stated in the following theorem:
 
@@ -88,7 +87,7 @@ The structural property of being prefix-free and the operational property of bei
 
 **Proof (Sketch):**
 
-$`(\Rightarrow)`$ If a code is prefix-free, then no codeword is the beginning of another. Therefore, when reading a message from left to right, the decoder can determine the end of each codeword immediately upon reading it's last symbol. And so, no lookahead is needed, hence the code is instantaneously decodable.
+$`(\Rightarrow)`$ If a code is prefix-free, then no codeword is the beginning of another. Therefore, when reading a message from left to right, the decoder can determine the end of each codeword immediately upon reading its last symbol. And so, no lookahead is needed, hence the code is instantaneously decodable.
 
 $`(\Leftarrow)`$ If a code is instantaneously decodable, the decoder can always determine the end of a codeword without reading further symbols. If any codeword were a prefix of another, the decoder would have to read additional symbols to decide where the codeword ends, contradicting instantaneous decodability. Hence, the code must be prefix-free.
 
@@ -97,7 +96,7 @@ Thus the two notions describe _the same class of codes_, just from different per
 - **Prefix-free** &mdash; a structural description of the code.
 - **Instantaneous decoding** &mdash; an operational description of the decoding process.
 
-## 6. Connection to MDL
+## 3.6. Connection to MDL
 
 Prefix-free codes are fundamental to the Minimum Description Length (MDL) principle:
 
@@ -110,7 +109,7 @@ L(\text{message}=x_1x_2\dots x_n) = \sum_{i=1}^n L(C(x_i)).
 
 -   Standard MDL coding schemes (such as unary, Elias gamma, and Elias delta codes) are all prefix-free codes.
 
-## 7. Why Codeword Lengths Matter
+## 3.7. Why Codeword Lengths Matter
 
 So far, we've seen that _prefix-free codes_ let us decode messages instantly and without ambiguity. But another natural question arises:
 
