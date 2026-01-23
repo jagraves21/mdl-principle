@@ -43,7 +43,7 @@ The goal is to design a code $`C`$ whose induced length function, $`\ell(x) = |C
 
 There are several important integer coding schemes, each with its own strategy for representing integers as sequences of bits. Understanding these codes in terms of their codeword lengths helps us see how efficiently they encode small versus large integers. In the following sections, we will introduce some widely used codes and examine how their codeword lengths grow with the integer $`n`$.
 
-### 4.2.1 Unary Code
+### 4.2.1. Unary Code
 
 The unary code is one of the simplest codes for positive integers. It is a _variable-length, prefix-free_ code.
 
@@ -70,7 +70,7 @@ Observe that the length of the unary codeword grows **linearly** with $`n`$ (i.e
 
 _**Note:** There are alternative definitions of unary code that swap the roles of 0s and 1s, and some versions define unary codes for all non-negative integers (including zero)._
 
-### 4.2.2 Elias Gamma Code
+### 4.2.2. Elias Gamma Code
 
 The Elias gamma code is a _variable-length, prefix-free code_ for encoding positive integers.
 
@@ -105,7 +105,7 @@ The Elias gamma code is efficient for small integers, and its codeword length
 
 grows **logarithmically** with $`n`$.
 
-### 4.2.3 Elias Delta Code
+### 4.2.3. Elias Delta Code
 
 The Elias delta code is a _variable-length, prefix-free code_ designed to efficiently encode positive integers, improving on Elias gamma for larger values.
 
@@ -140,13 +140,13 @@ The Elias delta code is more efficient than Elias gamma for larger integers, wit
 
 growing _slightly faster than $`\log_2 n`$ but much slower than linear_.
 
-### 4.2.4 Fibonacci Code
+### 4.2.4. Fibonacci Code
 
 The Fibonacci code is a _variable-length, prefix-free code_ that encodes positive integers using sums of non-consecutive Fibonacci numbers, known as the _Zeckendorf representation_.
 
 _**Note:** In this section, we define the Fibonacci sequence as $`F_{1} = 1, F_{2} = 1, F_{3} = 2, \dots`$, so the [Zeckendorf representation](https://en.wikipedia.org/wiki/Zeckendorf%27s_theorem) of any positive integer uses Fibonacci numbers $`F_{k}`$ with $`k \ge 2`$._
 
-#### 4.2.4.1 Zeckendorf Representation
+#### 4.2.4.1. Zeckendorf Representation
 
 The **Zeckendorf representation** expresses any positive integer $`n`$ as a sum of _non-consecutive Fibonacci numbers_:
 
@@ -172,7 +172,7 @@ To represent $`n = 100`$:
 - Largest Fibonacci $`\leq`$ 3 is $`F_4 = 3`$, remainder $`0`$
 - So $`100 = F_{11} + F_6 + F_4`$
 
-#### 4.2.4.2 Constructing Fibonacci Codewords
+#### 4.2.4.2. Constructing Fibonacci Codewords
 
 For a positive integer $`n`$, the Fibonacci code $`F(n)`$ is constructed as follows:
 
