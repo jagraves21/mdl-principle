@@ -61,7 +61,7 @@ At this point, $`w`$ and $`w^{\prime}`$ have the same prefix, namely $`10101`$. 
 
 It is worth noting that the Sardinas&ndash;Patterson algorithm applies only to finite codes. Determining whether an infinite code (i.e., one with an infinite source alphabet) is uniquely decodable is, in general, not computable, and other techniques are required.
 
-### 8.3.1 Preliminaries
+### 8.3.1. Preliminaries
 
 Let $`C: X \to Y^{*}`$ be a _finite_ code, where $`X`$ is the source alphabet and $`Y`$ is the code alphabet.
 
