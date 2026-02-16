@@ -1,4 +1,4 @@
-
+# 6. Codeword Lengths and the Kraft&ndash;McMillan Inequalities
 
 Building upon the ideas of prefix-free codes and codeword lengths, we now explore the constraints that ensure unambiguous decoding. This will allow us to connect codeword lengths to probabilities and, ultimately, to the minimum description length (MDL) principle.
 
