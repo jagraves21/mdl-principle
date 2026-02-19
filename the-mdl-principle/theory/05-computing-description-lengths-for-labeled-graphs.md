@@ -1,4 +1,4 @@
-# 5. Computing Description Lengths for Labeled Graphs
+# 5. Calculating Description Lengths for Labeled Graphs
 
 In this chapter, we consider the problem of computing the description length of a labeled graph. We will define a code over the set of all labeled graphs and show that, in practice, it is much easier to compute the length of a graph's codeword than to actually encode the graph.
 
@@ -118,7 +118,7 @@ This section contrasts the computational effort required to compute the descript
 
 Throughout this section, let $`G = (V, E, \ell_{V}, \ell_{E})`$ be a labeled graph.
 
-### 5.3.1. Computing Description Lengths
+### 5.3.1. Calculating Description Lengths
 
 The total description length of $`G`$ is given by
 
