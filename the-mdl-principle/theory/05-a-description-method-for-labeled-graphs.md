@@ -1,3 +1,4 @@
+
 # 5. A Description Method for Labeled Graphs
 
 In this chapter, we consider the problem of calculating the description length of a labeled graph. We define a code over the set of all labeled graphs and show that, in practice, it is much easier to calculate the length of a graph's description (i.e., codeword) than to actually compute the codeword.
@@ -127,7 +128,7 @@ L(G) = L(|V|) + L(|E|) + \log_{2} \binom{\frac{|V|(|V|-1)}{2}}{|E|} + \sum_{v \i
 
 Here,
 
-- $`L(|V|)`$ and $`L(|E|)`$ are the description lengths under the integer codes used to encode the number of vertices and edges,
+- $`L(|V|)`$ and $`L(|E|)`$ are the description lengths of the number of vertices and edges under the associated integer codes used to encode them,
 
 - $`\log_{2} \binom{\frac{|V|(|V|-1)}{2}}{|E|}`$ is the number of bits needed to encode the canonical adjacency matrix, and
 
@@ -179,4 +180,3 @@ In summary, calculating description lengths is a direct operation based on formu
 - <a id="garey1979"></a>Garey, M. R., & Johnson, D. S. *Computers and Intractability: A Guide to the Theory of NP-Completeness*. [ACM Digital Library](https://dl.acm.org/doi/book/10.5555/574848), 1979.
 - <a id="mckay2014"></a>McKay, B. D., & Piperno, A. *Practical Graph Isomorphism, II*. Journal of Symbolic Computation, 60 (2014), pp. 94–112. [https://doi.org/10.1016/j.jsc.2013.09.003](https://doi.org/10.1016/j.jsc.2013.09.003)
 - <a id="knuth2011"></a>Knuth, D. E. *The Art of Computer Programming, Volume 4A: Combinatorial Algorithms, Part 1*. Addison-Wesley, 2011. [ACM Digital Library](https://dl.acm.org/doi/10.5555/1984890)
-
