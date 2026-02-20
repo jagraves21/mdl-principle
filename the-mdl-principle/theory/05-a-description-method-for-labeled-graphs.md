@@ -1,4 +1,3 @@
-
 # 5. A Description Method for Labeled Graphs
 
 In this chapter, we consider the problem of calculating the description length of a labeled graph. We define a code over the set of all labeled graphs and show that, in practice, it is much easier to calculate the length of a graph's description (i.e., codeword) than to actually compute the codeword.
@@ -79,7 +78,7 @@ A common example is the set of binary strings of length $`n`$ with exactly $`k`$
 such strings. By fixing an ordering (for instance, _lexicographic order_), each string can be assigned a unique integer, called its **rank**, between $`0`$ and $`\binom{n}{k}-1`$. This mapping allows any object in the set to be represented efficiently as a fixed-length code of
 
 ```math
-\log_2 \binom{n}{k}
+\left\lceil \log_2 \binom{n}{k} \right\rceil
 ```
 
 bits.
@@ -123,7 +122,7 @@ Throughout this section, let $`G = (V, E, \ell_{V}, \ell_{E})`$ be a labeled gra
 The total description length of $`G`$ is given by
 
 ```math
-L(G) = L(|V|) + L(|E|) + \log_{2} \binom{\frac{|V|(|V|-1)}{2}}{|E|} + \sum_{v \in V} L(\ell_{V}(v)) + \sum_{e \in E} L(\ell_{E}(e)).
+L(G) = L(|V|) + L(|E|) + \log_{2} \left\lceil \binom{\frac{|V|(|V|-1)}{2}}{|E|} \right\rceil + \sum_{v \in V} L(\ell_{V}(v)) + \sum_{e \in E} L(\ell_{E}(e)).
 ```
 
 Here,
@@ -180,3 +179,4 @@ In summary, calculating description lengths is a direct operation based on formu
 - <a id="garey1979"></a>Garey, M. R., & Johnson, D. S. *Computers and Intractability: A Guide to the Theory of NP-Completeness*. [ACM Digital Library](https://dl.acm.org/doi/book/10.5555/574848), 1979.
 - <a id="mckay2014"></a>McKay, B. D., & Piperno, A. *Practical Graph Isomorphism, II*. Journal of Symbolic Computation, 60 (2014), pp. 94–112. [https://doi.org/10.1016/j.jsc.2013.09.003](https://doi.org/10.1016/j.jsc.2013.09.003)
 - <a id="knuth2011"></a>Knuth, D. E. *The Art of Computer Programming, Volume 4A: Combinatorial Algorithms, Part 1*. Addison-Wesley, 2011. [ACM Digital Library](https://dl.acm.org/doi/10.5555/1984890)
+
