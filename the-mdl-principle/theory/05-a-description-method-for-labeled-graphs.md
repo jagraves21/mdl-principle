@@ -1,30 +1,29 @@
-# 5. Calculating Description Lengths for Labeled Graphs
+# 5. A Description Method for Labeled Graphs
 
-In this chapter, we consider the problem of computing the description length of a labeled graph. We will define a code over the set of all labeled graphs and show that, in practice, it is much easier to compute the length of a graph's codeword than to actually encode the graph.
-
+In this chapter, we consider the problem of calculating the description length of a labeled graph. We define a code over the set of all labeled graphs and show that, in practice, it is much easier to calculate the length of a graph's description (i.e., codeword) than to actually compute the codeword.
 
 ## 5.1. Defining the Graph Model
 
-Graph theory terminology tends to be highly inconsistent across the literature, and different sources adopt slightly different definitions. For the purposes of this chapter, we adopt a precise definition of a labeled graph to fix the assumptions required for computing description lengths unambiguously.
+Graph theory terminology tends to be highly inconsistent across the literature, and different sources adopt slightly different definitions. For the purposes of this chapter, we adopt a precise definition of a labeled graph to fix the assumptions required for calculating description lengths unambiguously.
 
 Formally, a labeled graph $`G = (V, E, \ell_{V}, \ell_{E})`$ is an ordered 4-tuple, where:
 
-- $`V = \{v_{1}, \dots, v_{n}\}`$ is a non-empty set of vertices,  
-- $`E \subseteq \{\{i,j\} : i,j \in V, i \neq j\}`$ is the set of edges,  
-- $`\ell_{V} : V \to \mathcal{L}_{V}`$ assigns labels to vertices from a finite alphabet $`\mathcal{L}_{V}`$, and  
-- $`\ell_{E} : E \to \mathcal{L}_{E}`$ assigns labels to edges from a finite alphabet $`\mathcal{L}_{E}`$.  
+- $`V = \{v_{1}, \dots, v_{n}\}`$ is a non-empty set of elements called **vertices**,  
+- $`E \subseteq \{\{u,v\} : u,v \in V, u \neq v\}`$ is a set of unordered pairs of vertices called **edges**,  
+- $`\ell_{V} : V \to \mathcal{L}_{V}`$ is a function that assigns **labels to vertices** from a finite alphabet $`\mathcal{L}_{V}`$, and  
+- $`\ell_{E} : E \to \mathcal{L}_{E}`$ is a function that assigns **labels to edges** from a finite alphabet $`\mathcal{L}_{E}`$.
 
 This definition ensures that all subsequent constructions (such as encoding the graph structure) are unambiguous and consistent.
 
 ## 5.2. A Three-Stage Encoding Scheme
 
-To compute the description length of a labeled graph, we adopt a three-stage encoding approach. This decomposition separates the problem into manageable parts, allowing us to encode the graph efficiently while reflecting the contributions of different components to the total description length:
+To calculate the description length of a labeled graph, we adopt a three-stage encoding approach to serve as our description. This decomposition separates the problem into manageable parts, allowing us to encode the graph efficiently while reflecting the contributions of different components to the total description length:
 
 1. **First we encode the graph dimensions** by specifying the number of vertices $`|V|`$ and the number of edges $`|E|`$.  
 2. **Next we encode the graph structure** by representing the adjacency relationships between vertices.  
 3. **Finally we encode the graph labels** by assigning codewords to all vertex and edge labels.
 
-Each stage builds on the previous one: first we fix the size of the graph, then we encode its connectivity, and finally we encode the information carried by the labels. This staged approach simplifies both the computation and the analysis of the total description length.
+Each stage builds on the previous one: first we fix the size of the graph, then we encode its connectivity, and finally we encode the information carried by the labels. This staged approach simplifies both the calculation and the analysis of the total description length.
 
 ## 5.2.1. Encoding the Graph Dimensions
 
@@ -44,7 +43,7 @@ For now, suppose that a canonical adjacency matrix has already been fixed. Since
 
 entries, exactly $`|E|`$ of which are equal to $`1`$.
 
-By representing the upper triangle of the adjacency matrix as a binary string, we can compute its _rank_ under some total ordering. The details of this are provided later; for now, it is sufficient to know that the rank is an integer between
+By representing the upper triangle of the adjacency matrix as a binary string, we can compute its _rank_ under a fixed total ordering. The details of this are provided later; for now, it is sufficient to know that the rank is an integer between
 
 ```math
 0 \text{ and } \binom{\frac{|V|(|V|-1)}{2}}{|E|}-1.
@@ -64,7 +63,7 @@ A simple and widely used approach is as follows ([Knuth, 2011](#knuth2011)):
 2. Interpret each adjacency matrix as a binary string by concatenating all of its rows (or columns) in order.
 3. Choose the adjacency matrix whose binary string is _lexicographically smallest_. Equivalently, this is the adjacency matrix with the smallest integer value when the binary string is interpreted as a number.
 
-This procedure guarantees that every unlabeled graph corresponds to exactly one canonical adjacency matrix. By fixing the canonical adjacency matrix in this way, we remove any ambiguity arising from different vertex orderings.
+This procedure guarantees that every unlabeled graph corresponds to exactly one canonical adjacency matrix. By fixing the canonical adjacency matrix in this way, we remove any ambiguity arising from different vertex orderings when encoding the structure of the graph.
 
 ### 5.2.2.2 Ranking
 
@@ -102,7 +101,7 @@ of which are ones. By concatenating the rows (or columns) of the upper triangle 
 
 ## 5.2.3. Encoding the Graph Labels
 
-To encode the vertex and edge labels, we first impose a fixed total ordering on the vertices and edges. The vertex ordering could simply follow the order used to index the canonical adjacency matrix. The edge ordering could follow the sequence of non-zero entries in the upper triangle of the canonical adjacency matrix when concatenated row-wise or column-wise.  
+To encode the vertex and edge labels, we first impose a fixed total ordering on the vertices and edges. The vertex ordering could simply follow the order used to index the canonical adjacency matrix. The edge ordering could follow the sequence of non-zero entries in the upper triangle of the canonical adjacency matrix when concatenated row-wise or column-wise. However, if more than one possible ordering of the vertices yields the same canonical adjacency matrix, ties must be broken. This can be done by selecting an ordering that produces the smallest sequence of vertex and edge labels under some fixed total ordering, such as lexicographical order.
 
 Once the orderings are fixed, we encode the labels by traversing the vertices in order, followed by the edges in order. This can be done using a fixed-length code, or, if the label probabilities are known, we can leverage Shannon’s source coding theorem to assign each label a codeword length equal to the negative logarithm of its probability:
 
@@ -114,7 +113,7 @@ This approach ensures that the labels are encoded consistently with the chosen o
 
 ## 5.3. Computational Costs
 
-This section contrasts the computational effort required to compute the description length of a labeled graph with the effort required to encode and decode the graph itself. While computing the description length is straightforward, actual encoding involves significant combinatorial complexity, primarily due to canonicalization.
+This section contrasts the computational effort required to calculate the description length of a labeled graph with the effort required to encode and decode the graph itself. While calculating the description length is straightforward, actual encoding involves significant combinatorial complexity, primarily due to canonicalization.
 
 Throughout this section, let $`G = (V, E, \ell_{V}, \ell_{E})`$ be a labeled graph.
 
@@ -128,17 +127,17 @@ L(G) = L(|V|) + L(|E|) + \log_{2} \binom{\frac{|V|(|V|-1)}{2}}{|E|} + \sum_{v \i
 
 Here, 
 
-- $`L(|V|)`$ and $`L(|E|)`$ are the codeword lengths corresponding to the integer codes used for the number of vertices and edges, 
+- $`L(|V|)`$ and $`L(|E|)`$ are the description lengths under the integer codes used to encode the number of vertices and edges, 
 
 - $`\log_{2} \binom{\frac{|V|(|V|-1)}{2}}{|E|}`$ is the number of bits needed to encode the canonical adjacency matrix, and  
 
 - $`\sum_{v \in V} L(\ell_{V}(v))`$ and $`\sum_{e \in E} L(\ell_{E}(e))`$ are the bits required to encode all vertex and edge labels, respectively.
 
-This formulation treats the graph as a single object $`G`$ and emphasizes that the description length is fully determined by the number of vertices, the number of edges, the canonical adjacency matrix, and the vertex and edge labels. Importantly, we can compute $`L(G)`$ without ever constructing the actual codeword for $`G`$, as long as the integer codes used to encode $`|V|`$ and $`|E|`$ can be computed directly.
+This formulation treats the graph as a single object $`G`$ and emphasizes that the description length is fully determined by the number of vertices, the number of edges, the canonical adjacency matrix, and the vertex and edge labels. Importantly, we can compute $`L(G)`$ without ever computing the actual codeword for $`G`$, as long as the integer code lengths for $`|V|`$ and $`|E|`$ can be calculated directly.
 
-> **Note:** It is important to observe that computing $`L(G)`$ is straightforward and can be done quickly.
+> **Note:** It is important to observe that calculating $`L(G)`$ is straightforward and can be done quickly.
 
-### 5.3.2. Encoding Graphs as Codewords
+### 5.3.2. Computing Codewords of Labeled Graphs
 
 Encoding a labeled graph under our encoding scheme requires computing a canonical adjacency matrix, which is equivalent to solving a graph isomorphism problem. The steps are as follows:
 
@@ -148,11 +147,11 @@ Encoding a labeled graph under our encoding scheme requires computing a canonica
 4. **Encode the rank of the upper triangle** using a fixed-length code.  
 5. **Encode vertex and edge labels** following a fixed total ordering.
 
-The primary difficulty in this process is computing the canonical adjacency matrix. This requires considering all possible vertex permutations to identify the lexicographically smallest adjacency matrix. For general graphs, graph isomorphism is in **NP**, but not known to be NP-complete ([Garey & Johnson, 1979](#garey1979)), and quasipolynomial-time algorithms exist ([Babai, 2016](#babai2016)). For small to medium graphs, practical algorithms such as *nauty* ([McKay & Piperno, 2014](#mckay2014)) efficiently compute canonical forms, but for large graphs, canonicalization remains the main computational bottleneck.  
+The primary difficulty in this process is computing the canonical adjacency matrix. This requires considering all possible vertex permutations to identify the lexicographically smallest adjacency matrix. The graph isomorphism is in **NP**, but not known to be NP-complete ([Garey & Johnson, 1979](#garey1979)), and quasipolynomial-time algorithms exist ([Babai, 2016](#babai2016)). For small to medium graphs, practical algorithms such as *nauty* ([McKay & Piperno, 2014](#mckay2014)) efficiently compute canonical forms, but for large graphs, canonicalization remains the main computational bottleneck.  
 
 Once the canonical adjacency matrix is determined, ranking the upper triangle and encoding the labels can be performed efficiently. For many natural total orderings of the binary strings (e.g., lexicographic), ranking can be done in polynomial time in the number of entries in the upper triangle ([Knuth, 2011](#knuth2011)).
 
-### 5.3.3. Decoding Graphs from Codewords
+### 5.3.3. Computing Labeled Graphs from Codewords
 
 Decoding a labeled graph from its codeword is significantly easier than encoding. Since the codeword explicitly specifies the graph structure and labels, the procedure is straightforward:
 
@@ -164,15 +163,17 @@ No search over vertex permutations is required because the adjacency matrix in t
 
 ### 5.3.4. Comparing Computational Complexity
 
-This comparison highlights the asymmetry between computing description lengths, encoding, and decoding:
+The asymmetry between calculating description lengths and encoding and decoding labeled graphs arises from a fundamental difference in what must be done in each case:
 
-- **Computing $`L(G)`$** is fast and straightforward, requiring only combinatorial calculations and label lengths.  
-- **Encoding a labeled graph** is computationally challenging due to canonicalization, which involves solving the graph isomorphism problem.  
-- **Decoding a labeled graph** is efficient, as the canonical structure is provided, and only polynomial-time reconstruction is required.
+- **Calculating $`L(G)`$** requires only evaluating explicit combinatorial formulas determined by the number of vertices, edges, and labels. The binomial term and label sums can be computed directly, without any search over vertex permutations. The overall cost grows essentially linearly with $`|V| + |E|`$ and remains feasible even for very large graphs.
 
-In practice, this means that we can often compute description lengths quickly for large graphs, even though actual encoding is limited to smaller graphs where canonicalization is feasible.
+- **Encoding a labeled graph** is computationally intensive because it requires selecting a canonical adjacency matrix. This involves finding a permutation of vertices that produces the lexicographically smallest adjacency matrix, which is equivalent to solving a graph isomorphism problem. Although the space of possible vertex permutations has size $`|V|!`$, the best known worst-case algorithms for graph isomorphism run in quasipolynomial time. In practice, canonicalization is often efficient for small to medium graphs, but it can still become a computational bottleneck for large instances.
 
-## 5.5. References
+- **Decoding a labeled graph** from a codeword is easier than encoding. The codeword already specifies the canonical adjacency matrix and label sequences, so no search over permutations is required. Reconstruction can be performed in polynomial time by reversing the ranking and label encoding procedures.
+
+In summary, calculating description lengths is a direct operation based on formulas, encoding requires a combinatorial search, and decoding involves structured but efficient reconstruction. This creates a pronounced asymmetry between formula-based evaluation and the algorithmic requirements of encoding and decoding.
+
+## 5.4. References
 
 - <a id="babai2016"></a>Babai, L. *Graph Isomorphism in Quasipolynomial Time*. [arXiv:1512.03547](https://arxiv.org/abs/1512.03547), 2016.  
 - <a id="garey1979"></a>Garey, M. R., & Johnson, D. S. *Computers and Intractability: A Guide to the Theory of NP-Completeness*. [ACM Digital Library](https://dl.acm.org/doi/book/10.5555/574848), 1979.  
