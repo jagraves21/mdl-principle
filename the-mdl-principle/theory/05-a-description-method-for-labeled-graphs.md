@@ -57,7 +57,7 @@ This integer is then encoded using a fixed-length code.
 
 To ensure that the encoding of a graph is unique, we must select a _canonical adjacency matrix_ from the set of all adjacency matrices corresponding to the same unlabeled graph. The canonical adjacency matrix serves as a representative that is independent of the vertex ordering.
 
-A simple and widely used approach is as follows \[[Knuth, 2011](#knuth2011)\]:
+A simple and widely used approach is as follows ([Knuth, 2011](#knuth2011)):
 
 1. Consider all possible adjacency matrices obtained by permuting the vertices.
 2. Interpret each adjacency matrix as a binary string by concatenating all of its rows (or columns) in order.
@@ -129,7 +129,7 @@ Here,
 
 - $`L(|V|)`$ and $`L(|E|)`$ are the description lengths of the number of vertices and edges under the associated integer codes used to encode them,
 
-- $`\log_{2} \binom{\frac{|V|(|V|-1)}{2}}{|E|}`$ is the number of bits needed to encode the canonical adjacency matrix, and
+- $`\left\lceil \log_{2} \binom{\frac{|V|(|V|-1)}{2}}{|E|} \right\rceil`$ is the number of bits needed to encode the canonical adjacency matrix, and
 
 - $`\sum_{v \in V} L(\ell_{V}(v))`$ and $`\sum_{e \in E} L(\ell_{E}(e))`$ are the bits required to encode all vertex and edge labels, respectively.
 
@@ -147,9 +147,9 @@ Encoding a labeled graph under our encoding scheme requires computing a canonica
 4. **Encode the rank of the upper triangle** using a fixed-length code.
 5. **Encode vertex and edge labels** following a fixed total ordering.
 
-The primary difficulty in this process is computing the canonical adjacency matrix. This requires considering all possible vertex permutations to identify the lexicographically smallest adjacency matrix. The graph isomorphism is in **NP**, but not known to be NP-complete \[[Garey & Johnson, 1979](#garey1979)\], and quasipolynomial-time algorithms exist \[[Babai, 2016](#babai2016)\]. For small to medium graphs, practical algorithms such as *nauty* \[[McKay & Piperno, 2014](#mckay2014)\] efficiently compute canonical forms, but for large graphs, canonicalization remains the main computational bottleneck.
+The primary difficulty in this process is computing the canonical adjacency matrix. This requires considering all possible vertex permutations to identify the lexicographically smallest adjacency matrix. The graph isomorphism is in **NP**, but not known to be NP-complete ([Garey & Johnson, 1979](#garey1979)), and quasipolynomial-time algorithms exist ([Babai, 2016](#babai2016)). For small to medium graphs, practical algorithms such as *nauty* ([McKay & Piperno, 2014](#mckay2014)) efficiently compute canonical forms, but for large graphs, canonicalization remains the main computational bottleneck.
 
-Once the canonical adjacency matrix is determined, ranking the upper triangle and encoding the labels can be performed efficiently. For many natural total orderings of the binary strings (e.g., lexicographic), ranking can be done in polynomial time in the number of entries in the upper triangle \[[Knuth, 2011](#knuth2011)\].
+Once the canonical adjacency matrix is determined, ranking the upper triangle and encoding the labels can be performed efficiently. For many natural total orderings of the binary strings (e.g., lexicographic), ranking can be done in polynomial time in the number of entries in the upper triangle ([Knuth, 2011](#knuth2011)).
 
 ### 5.3.3. Computing Labeled Graphs from Codewords
 
