@@ -95,19 +95,29 @@ Thus, while fixed-length and Shannon-optimal codes are useful for discrete symbo
 
 ## 4.4. Fractional Codeword Lengths and Average Optimality
 
-When reasoning about codeword lengths abstractly, we often allow fractional lengths rather than rounding to the nearest integer. For example, in English text, the letter `e` occurs with probability $`p(\text{e}) \approx 0.13`$. The corresponding Shannon-optimal codeword length is
+Concrete codes assign integer numbers of bits to each symbol. From an information-theoretic perspective, it is often useful to relax this constraint and allow for fractional codeword lengths. This provides a smoother measure of information content, avoiding artificial jumps caused by rounding.
+
+For example, a fixed-length code over 9 symbols requires
+
+```math
+\lceil \log_{2} 9 \rceil = 4 \text{ bits},
+```
+
+which is the same as for 16 symbols. The extra bits reflect the limitations of integer coding rather than any additional information. Treating codeword lengths as real numbers allows us to reason about the _intrinsic information content_ more accurately.
+
+Fractional lengths are closely connected to the average codeword length of an optimal prefix-free code. For a set of symbols $`X = \{ x_{i} \}`$ with probabilities $`p(x_{i})`$, the expected length under a Shannon-optimal code is
+
+```math
+\mathbb{E}[L(X)] = \sum_{x_{i}} p(x_{i}) L(x_{i}) = \sum_{x_{i}} p(x_{i}) \, (-\log_{2} p(x_{i})).
+```
+
+Although any actual codeword must be an integer number of bits, the rounding overhead is small, and over many symbols the average length approaches this expected value. Fractional lengths thus provide a faithful abstraction for analyzing and comparing description lengths, particularly when designing codes or reasoning about optimal compression.
+
+For instance, in English text, the letter `e` occurs with probability $`p(\text{e}) \approx 0.13`$, giving a Shannon-optimal codeword length of
 
 ```math
 L(e) = -\log_{2} p(\text{e}) \approx 2.94 \text{ bits}.
 ```
 
-Allowing fractional lengths is convenient because it corresponds to the _average codeword length_ of an optimal prefix-free code. Formally, if we consider a set of symbols $`X = \{ x_{i} \}`$ with associated probabilities $`p(x_{i})`$, the expected codeword length is
-
-```math
-\mathbb{E}[L(X)] = \sum_{x_{i} \in X} p(x_{i}) \, L(x_{i}) = \sum_{x_{i} \in X} p(x_{i}) \, (-\log_{2} p(x_{i})).
-```
-
-Any actual code must assign integer-length codewords, but rounding introduces only a small overhead (at most 1 bit per codeword). For large collections of symbols, the average length per symbol approaches this expected value, making fractional lengths a faithful and practical abstraction for analyzing compression and description length.
-
-Going forward, we will allow fractional bits when reasoning about abstract codes. Treating codeword lengths as real numbers simplifies analysis without affecting the essence of the MDL principle.
+This fractional length indicates that, on average, less than 3 bits per `e` are sufficient for optimal encoding over long sequences of text.
 
