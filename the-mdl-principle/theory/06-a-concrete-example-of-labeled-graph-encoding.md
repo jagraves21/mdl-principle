@@ -27,6 +27,10 @@ and the edge labeling $`\ell_{E}`$ is
 \{c,d\} \mapsto \tau.
 ```
 
+The following is a visualization of this graph:
+
+![Labeled Graph](../../assets/images/labeled-graph.png)
+
 ## 6.1. Encoding the Labeled Graph
 
 We illustrate the three-stage encoding procedure in detail in the following sections. For clarity and readability, we insert spaces between the different components of the codeword to visually separate them. These spaces are not part of the actual codeword. In reality, the encoder outputs a single concatenated bitstring, and the decoder parses it without access to any visual separators
