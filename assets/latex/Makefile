@@ -1,18 +1,18 @@
 # TEX Sources
-TEX_SOURCES := universal-prefix-tree.tex code-space-tree.tex shannon-fano-code.tex huffman-code.tex $(wildcard lexicographical-code-construction-*.tex)
+TEX_SOURCES := universal-prefix-tree.tex code-space-tree.tex shannon-fano-code.tex huffman-code.tex labeled-graph.tex $(wildcard lexicographical-code-construction-*.tex)
 PDFS := $(TEX_SOURCES:.tex=.pdf)
 
 # PDF Sources
-PNG_SOURCES := universal-prefix-tree.tex code-space-tree.tex shannon-fano-code.tex huffman-code.tex
+PNG_SOURCES := universal-prefix-tree.tex code-space-tree.tex shannon-fano-code.tex huffman-code.tex labeled-graph.tex
 PNGS := $(PNG_SOURCES:.tex=.png)
 
-# GIF sources
+# GIF Sources
 GIF_SOURCES := $(wildcard lexicographical-code-construction-*.tex)
 GIF_PDFS := $(GIF_SOURCES:.tex=.pdf)
 GIF_FRAMES := $(patsubst %.pdf,frame_%.png,$(GIF_PDFS))
 GIF := lexicographical-code-construction.gif
 
-# Default target
+# Default Target
 all: $(PNGS) $(GIF)
 
 # Build PDFs only from TEX_SOURCES
@@ -64,5 +64,5 @@ veryclean: clean-latex clean-frames
 	rm -f $(PDFS) $(PNGS) $(GIF)
 
 # Phony targets
-.PHONY: all clean veryclean pdf png frames gif clean-latex clean-frames clean-all
+.PHONY: all clean veryclean pdf png frames gif clean-latex clean-frames install
 
