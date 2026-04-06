@@ -8,7 +8,7 @@ Crude MDL refers to a simple, often explicit, coding-based implementation of the
 
 - In some cases, crude MDL uses an _explicit code_, where both the model and the data are encoded literally. We saw this in the case of polynomial regression.
 
-- However, crude MDL does not require a fully specified code. It is often sufficient to know the lengths of codewords without defining the exact mapping. We saw how this could be done to measure the description length of labeled graphs without defining an explicit code.
+- However, crude MDL does not require a fully specified code. It is often sufficient to know what the lengths of codewords would be without defining the exact mapping. We saw how this could be done to measure the description length of labeled graphs without defining an explicit code.
 
 The total description length in crude MDL is usually expressed as the sum of model and data parts:
 
